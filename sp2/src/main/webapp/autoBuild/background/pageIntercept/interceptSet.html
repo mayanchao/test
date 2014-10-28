@@ -1,0 +1,190 @@
+<table  style="width:600px"  border=1 >
+	<!--
+	<tr>
+		<td align='left'  colspan="1" >拦截地址:
+			<select  id='globalFunction_autoBuild_back_url_list' size=4   onchange="globalFunction_autoBuild_back_url_change()" style="width:60px;">				
+			</select>
+			<input type='button' value="加载url"  onclick="globalFunction_autoBuild_back_role_finalload()" >									
+		</td>
+		<td align='left'  colspan="1" >
+			<input type='button' value="加载url"  onclick="globalFunction_autoBuild_back_role_finalload()" > 
+			<input type='button' value="保存"   onclick='globalFunction_autoBuild_back_role_finalsave()'>
+			备注:<input id='globalFunction_autoBuild_back_role_descript' type='text'  >
+		</td>
+	</tr>
+	-->
+	<tr>
+	 	<!-- 左侧列 -->
+	 	<td>	
+	 		<table  border=1  >
+	 			<tr>
+					<td>
+	 					<select id="globalFunction_autoBuild_back_intercept_role_select" >							
+						</select>
+						<input type='button'	 value=匹配角色     onclick="globalFunction_autoBuild_back_url_role_add()" >
+						<input type='button'	 value=删除角色     onclick="globalFunction_autoBuild_back_url_role_delete()" >
+					</td>
+				</tr>
+				<tr>
+	 				<td>
+	 					<select  id='globalFunction_autoBuild_back_intercept_role_list' size=8   onchange="globalFunction_autoBuild_back_role_modify()" style="width:60px;">
+	 					</select>
+	 				</td>
+				</tr>	
+	 		</table>
+	 	</td>
+	 	
+	 	<!-- 右侧列 -->
+	 	<td>
+	 		<table border=3   style='width:300'  >
+	 			<tr  >
+					<td  align='center' >名字</td>
+					<td >
+						<input type="text" id="globalFunction_autoBuild_back_intercept_name" />
+					</td>
+				</tr>				
+				<tr  >
+					<td  align='center' >url</td>
+					<td >
+						<input type="text" id="globalFunction_autoBuild_back_intercept_url" />
+					</td>
+				</tr>
+				<tr  >
+					<td  align='center' >操作</td>
+					<td >											
+						<input type="button" value="根据名字加载"  onclick="globalFunction_autoBuild_back_intercept_loadUrl()"  >
+						<input type="button" value="保存修改"  onclick="globalFunction_autoBuild_back_role_savemodify()"  >
+					</td>
+				</tr>
+	 			    		 			  
+	 		</table>
+	 	</td>
+	</tr>
+</table>
+
+<script >
+	
+	//关联角色
+	function globalFunction_autoBuild_back_url_role_add(){
+		var myValue = $("#globalFunction_autoBuild_back_intercept_role_select").val();		
+		var mySelect = $('#globalFunction_autoBuild_back_intercept_role_select option:selected');
+		var varItem = new Option(mySelect.text() , mySelect.attr("value") );
+		document.getElementById("globalFunction_autoBuild_back_intercept_role_list").options.add(varItem);
+					
+	}
+	
+	//解除关联角色
+	function globalFunction_autoBuild_back_url_role_delete(){
+		 $('#globalFunction_autoBuild_back_intercept_role_list option:selected').remove();
+	}
+	
+	
+	
+	//保存修改
+	function globalFunction_autoBuild_back_role_savemodify(){
+		var interrcepObj = {};
+		interrcepObj.name = $("#globalFunction_autoBuild_back_intercept_name").val(); 
+		interrcepObj.url = $("#globalFunction_autoBuild_back_intercept_url").val();
+		interrcepObj.projectId = globalProjectId
+		
+		$.ajax({
+			type: "post",
+			async: false,//同步删除数据
+			url: "/web/singleTable/action/SingleTableAction_deleteTableByWhere.do1?singleTableName=AutoSecurityInterceptVO",
+			data: {
+				"tableJson": "{projectId:'" + globalProjectId + "',name:'" + interrcepObj.name + "'}"
+			}
+		});
+		
+		
+		$("#globalFunction_autoBuild_back_intercept_role_list option").each(function(index,data){
+			interrcepObj.roleId = $(data).val();
+			var jsonStr = $.toJSON( interrcepObj );
+			$.ajax({
+				type:"post",
+				async:false,//同步处理
+				url:"/web/singleTable/action/SingleTableAction_save.do1",
+				data: {
+					"tableJson": jsonStr,
+					"singleTableName": "AutoSecurityInterceptVO"
+				},
+				success:function(data){
+						
+			   }
+			});
+			
+			
+			
+		})	
+		
+		
+		
+	}
+	
+	
+	/**
+	 * 加载url
+	 */
+	function globalFunction_autoBuild_back_intercept_loadUrl(){
+		//var myText = $("#globalFunction_autoBuild_back_intercept_url").val();		
+		//AutoSecurityInterceptVO
+		var interceptName= $("#globalFunction_autoBuild_back_intercept_name").val()
+		
+		$.ajax({
+				type:"post",
+				async:false,//同步处理
+				url:"/web/busin/action/BusinTableAction_findProjectInterceptAndRole.do1",
+				data: {
+					"projectId": globalProjectId,
+					"name":interceptName
+				},
+				success:function(data){
+					$("#globalFunction_autoBuild_back_intercept_role_list").empty();
+					//初始化list表
+					for(var i=0;(data!=null && i<data.length);i++){
+						var varItem = new Option(data[i].name , data[i].id );
+						document.getElementById("globalFunction_autoBuild_back_intercept_role_list").options.add(varItem);
+					}
+			   }
+			});
+		
+	}
+	
+	/**
+	 * 加载当前工程所有的角色 ，当前工程的url页面
+	 */
+	function globalFunction_autoBuild_back_url_role_init(){
+		//加载角色
+			$.ajax({
+				type:"post",
+				async:false,//同步处理
+				url:"/web/singleTable/action/SingleTableAction_findTable.do1",
+				data: {
+					"tableJson": "{projectid:'" + globalProjectId + "'}",
+					"singleTableName": "AutoSecurityRoleVO"
+					//"distinctName":"name"   //根据角色名字去重
+				},
+				success:function(data){
+					
+					$("#globalFunction_autoBuild_back_intercept_role_select").empty();						
+					//初始化list表
+					for(var i=0;(data!=null && i<data.length);i++){
+						var varItem1 = new Option(data[i].name , data[i].id );
+						document.getElementById("globalFunction_autoBuild_back_intercept_role_select").options.add(varItem1);
+					}
+			   }
+			});
+			
+			
+	} 
+	
+	//当选择新地址栏的时候
+	function globalFunction_autoBuild_back_url_change(){
+		
+		//获得当前地址下的所有角色
+		
+	}
+	
+	globalFunction_autoBuild_back_url_role_init();
+</script>
+

@@ -1,0 +1,6 @@
+<html><head>
+<script src=/js/common.js  >  </script><script src=/js/jquery-1.10.1.js  >  </script> <script src=/js/jquery-ui-1.10.2.custom.js  >  </script> <script src=/js/jquery.json-2.4.js >  </script> <link rel='stylesheet' href='/css/ui-lightness/jquery-ui-1.10.2.custom.css' /><link href='/css/style.css' rel='stylesheet' type='text/css' /><link href='/css/css.css' rel='stylesheet' type='text/css' /></head><body>
+<input type='text'   onblur=autoBuild_html_validate_textLength_js({"errorText":"err123","errorType":"alert","handleType":"onblur","htmlId":"'buildId_vote444_14008583066221'","maxLength":"4","minLength":"1","name":"newRule","type":"autoBuild_html_validate_textLength"},this) style='position:absolute;top:785px;left:22px;' id=buildId_vote444_14008583066221 width=20 height=10 maxlength=10 name=  value='' />
+<script >
+
+</script></div>

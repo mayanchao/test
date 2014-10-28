@@ -1,0 +1,43 @@
+<html><head>
+<script src=/js/common.js  >  </script><script src=/js/jquery-1.10.1.js  >  </script> <script src=/js/jquery-ui-1.10.2.custom.js  >  </script> <script src=/js/jquery.json-2.4.js >  </script> <link rel='stylesheet' href='/css/ui-lightness/jquery-ui-1.10.2.custom.css' /><link href='/css/style.css' rel='stylesheet' type='text/css' /><link href='/css/css.css' rel='stylesheet' type='text/css' /></head><body>
+<meta http-equiv=Content-Type content=text/html; charset=UTF-8 /><label    style='position:absolute;top:89px;left:35px;' id=buildId_peopleAdd_14016256054891 width=100 height=100  >
+姓名 </label>
+<label    style='position:absolute;top:120px;left:38px;' id=buildId_peopleAdd_14016256089122 width=100 height=100  >
+密码 </label>
+<input type='text'   onblur=validate_buildId_peopleAdd_14016256376093_onblur(this)   style='position:absolute;top:81px;left:107px;' id=buildId_peopleAdd_14016256376093 width=20 height=10 maxlength=10 name=name  value='' />
+<script>
+  function validate_buildId_peopleAdd_14016256376093_onblur(mythis){
+
+ autoBuild_html_validate_textLength_js({"errorText":"??????","errorType":"alert","handleType":"onblur","maxLength":"10","minLength":"1","name":"newRule","type":"autoBuild_html_validate_textLength"},mythis);
+}
+</script>
+  <input type='text'   onblur=validate_buildId_peopleAdd_14016256423764_onblur(this)   style='position:absolute;top:113px;left:108px;' id=buildId_peopleAdd_14016256423764 width=20 height=10 maxlength=10 name=password  value='' />
+<script>
+  function validate_buildId_peopleAdd_14016256423764_onblur(mythis){
+
+ autoBuild_html_validate_textLength_js({"errorText":"??????","errorType":"alert","handleType":"onblur","maxLength":"10","minLength":"1","name":"newRule","type":"autoBuild_html_validate_textLength"},mythis);
+}
+</script>
+  <input type='button'    style='position:absolute;top:159px;left:70px;' id=buildId_peopleAdd_14016256496175 width=20 height=20  onclick=globalCommonAjaxbuildId_peopleAdd_14016257387448('null','null','null','null')  value='保存' />
+<label    style='position:absolute;top:53px;left:35px;' id=buildId_peopleAdd_14016256551216 width=100 height=100  >
+编号 </label>
+<input type='text'   onblur=validate_buildId_peopleAdd_14016256665917_onblur(this)   style='position:absolute;top:48px;left:108px;' id=buildId_peopleAdd_14016256665917 width=20 height=10 maxlength=10 name=number  value='' />
+<script>
+  function validate_buildId_peopleAdd_14016256665917_onblur(mythis){
+
+ autoBuild_html_validate_textLength_js({"errorText":"必须填写1","errorType":"alert","handleType":"onblur","maxLength":"10","minLength":"1","name":"newRule","type":"autoBuild_html_validate_textLength"},mythis);
+}
+</script>
+  <div><script >
+function  globalCommonAjaxbuildId_peopleAdd_14016257387448(myValue){
+var ajaxConfig = {myUrl:"/web/singleTable/action/SingleTableAction_save.do1?singleTableName=VotePeopleVO",inputValue:myValue  }
+ajaxConfig.myUrl=globalToolsTableValueReplace(ajaxConfig.myUrl,ajaxConfig,ajaxConfig.inputValue); 
+myCallBeforeSimpleFindValue({"ids":"buildId_peopleAdd_14016256665917,buildId_peopleAdd_14016256376093,buildId_peopleAdd_14016256423764","click":"globalToolsTableColumnButtonDrawById","resultHandler":"tableJson","methodName":""},ajaxConfig)
+globalToolsAjaxSubmit(ajaxConfig.myUrl,{paramBuildJs:"autoBuild_html_ajax_beforeCall_myCallBeforeSimpleFindValue{'ids':'buildId_peopleAdd_14016256665917,buildId_peopleAdd_14016256376093,buildId_peopleAdd_14016256423764','click':'globalToolsTableColumnButtonDrawById','resultHandler':'tableJson','methodName':''}",myCallBackFunction:"(null"},myValue);
+}
+</script ></div>
+</body>
+</html>
+<script >
+
+</script></div>

@@ -1,0 +1,53 @@
+<table id="globalFunction_autoBuild_html_menu_topmenu_mainTable" style="width:600px"  border=1 >
+	 <tr>
+	 	<!-- 左侧列 -->
+	 	<td>	
+	 		<table  border=1  >
+	 			<tr>
+					<td>
+						<input type='button'	 value=刷新   onclick='globalFunction.autoBuild_html_menu_topMenu.refresh()'>
+	 					<input type='button'	 value=添加   onclick='globalFunction.autoBuild_html_menu_topMenu.add()'>
+						<input type='button'	 value=删除      onclick="globalFunction.autoBuild_html_menu_topMenu.remove()" >							
+					</td>
+				</tr>
+				<tr>	
+	 				<td>
+	 					<select  id='globalFunction_autoBuild_html_menu_topMenu_columnSelect' size=8   onchange="globalFunction.autoBuild_html_menu_topMenu.modify()" style="width:60px;">
+	 						<!--
+	 					  <option> 列1</option>
+						  -->
+	 					</select>
+	 				</td>
+				</tr>	
+	 		</table>
+	 	</td>
+	 	
+	 	<!-- 右侧列 -->
+	 	<td>
+	 		<table border=3   style='width:300'  >  
+	 				<tr  style='width:100' >
+	 					<td  align='center' >位置</td>
+						<td>							
+							<select  id="globalFunction_autoBuild_html_menu_topmenu_location"  >
+								<option value="left">左边</option>								
+								<option value="right">右边</option>
+							</select>
+						</td>
+					</tr>	 				
+					<tr  >
+						<td  align='center' >类型</td>
+						<td >
+							<select  id="globalFunction_autoBuild_html_menu_topmenu_type"  >
+								<option value="globalToolsTopMenuColumn_url">连接</option>								
+								<option value="globalToolsTopMenuColumn_image">图片</option>
+							</select>						
+						</td>
+					</tr>
+	 			    <tr  >
+	 			    	<td  align='center' >设置</td>
+						<td ><input     id='globalFunction_autoBuild_html_table_topTable_columnLoad' type='text' name=param4   ondblclick='show_topmenu_param_input(this,show_topmenu_param_input_callback)'   >（双击改值）</td>
+					</tr>		 			  
+	 		</table>
+	 	</td>
+	</tr>
+</table>

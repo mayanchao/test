@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">    
+    <link rel="icon" href="favicon.ico">
+    <title>sample1</title>
+    
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+     
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		
+		<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+		
+		<script src="js/jquery.json-2.4.js"  >  </script>
+		<!-- 基本公司模块js -->
+		<script src="/web/busin/action/BusinTempletAction_commonjs.do1?moduleType=CompanyInfoTempletModule"  >  </script>
+		
+		
+		<style>
+			
+			/*
+			 * Style tweaks
+			 * --------------------------------------------------
+			 */
+			html,
+			body {
+			  overflow-x: hidden; /* Prevent scroll on narrow devices */
+			}
+			body {
+			  padding-top: 70px;
+			}
+			footer {
+			  padding: 30px 0;
+			}
+			
+			/*
+			 * Off Canvas
+			 * --------------------------------------------------
+			 */
+			@media screen and (max-width: 767px) {
+			  .row-offcanvas {
+			    position: relative;
+			    -webkit-transition: all .25s ease-out;
+			         -o-transition: all .25s ease-out;
+			            transition: all .25s ease-out;
+			  }
+			
+			  .row-offcanvas-right {
+			    right: 0;
+			  }
+			
+			  .row-offcanvas-left {
+			    left: 0;
+			  }
+			
+			  .row-offcanvas-right
+			  .sidebar-offcanvas {
+			    right: -50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-left
+			  .sidebar-offcanvas {
+			    left: -50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-right.active {
+			    right: 50%; /* 6 columns */
+			  }
+			
+			  .row-offcanvas-left.active {
+			    left: 50%; /* 6 columns */
+			  }
+			
+			  .sidebar-offcanvas {
+			    position: absolute;
+			    top: 0;
+			    width: 50%; /* 6 columns */
+			  }
+			}
+		
+		
+    
+		</style>
+		
+
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+  			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" >
+  				
+  			<div class="list-group">
+	            <a href="#" class="list-group-item active">Link1</a>
+	            <a href="#" class="list-group-item">Link</a>
+	            <a href="#" class="list-group-item">Link</a>            
+	        </div>
+          
+          <div class="list-group" ondblclick="openConsole()"    >
+          	   <a href="#" class="list-group-item active">Link</a>
+	           <ul  id="left-list-id" class="list-unstyled"   >
+					<li  ><a href="#" class="list-group-item">Item1</a></li>
+					<li  ><a href="#" class="list-group-item">Item2</a></li>
+					<li  ><a href="#" class="list-group-item">Item3</a></li>
+					<li  ><a href="#" class="list-group-item">Item4</a></li>							
+				</ul>		
+          </div>
+          
+		  <button type="button" class="btn btn-default btn-lg btn-block"  onclick="addNewTemplet('left-list-id',base_baseshow_company_js_com)" >add templete info</button>
+		  
+		  <!-- 展现的div -->
+          <div class="list-group" ondblclick="openConsole(this)" 
+		  	module-data="{}"
+			module_id="aaa111222333"
+		   >
+              <h2>Heading</h2>
+              <p>Devouring Time,blunt thou the lion'paws,And make the earth devour her own sweet brood;Pluck the keen teeth from the fierce tiger's jaws,And burn the long--liv'd phoenix in her blood;Make glad and sorry seasons as thou fleets,And do whate'er thou wilt,swift--footed Time,To the wide world and all her fading sweets;But I forbid thee one most heinous crime, carve not with thy hours my love's fair brow,Nor draw no lines there with thine antique pen.Him in thy course untainted do allow,For beauty's pattern to succeeding men.Yet do thy worst,old Time;despite thy wrong,My love shall in my verse ever live young.</p>
+              <p><span class="glyphicon glyphicon-earphone"></span> 110-23123332111</p>            	
+          </div>
+          
+        </div><!--/span-->
+        
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+        <div class="col-xs-12 col-sm-9">
+        	
+        	<!--
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          -->
+          
+          <ul   id="right-list-top" class="list-unstyled"   >
+          	<li >
+      			<a href="#" class="list-group-item">
+			          <div class="jumbotron"  ondblclick="openConsole()"  >
+			            <h1>Hello, world! <input type="button"  value="cccccc"></h1>
+			            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+			          </div>
+		          </a>
+		    </li>
+	         
+          	<li>
+	  			<a href="#" class="list-group-item">
+			          <div class="jumbotron"  ondblclick="openConsole()"  >
+			            <h1>look, around!</h1>
+			            <p>do you want to spend the rest of your life selling sugared water or do you want a chance to change the world?</p>
+			   	      </div>
+	  			</a>
+		      </li>
+	         
+          </ul>
+          
+          <button type="button" class="btn btn-default btn-lg btn-block"  onclick="addNewTemplet('right-list-top')" >add templete info</button>
+          
+          <div class="row">
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Heading</h2>
+              <p>Devouring Time,blunt thou the lion'paws,And make the earth devour her own sweet brood;Pluck the keen teeth from the fierce tiger's jaws,And burn the long--liv'd phoenix in her blood;Make glad and sorry seasons as thou fleets,And do whate'er thou wilt,swift--footed Time,To the wide world and all her fading sweets;But I forbid thee one most heinous crime, carve not with thy hours my love's fair brow,Nor draw no lines there with thine antique pen.Him in thy course untainted do allow,For beauty's pattern to succeeding men.Yet do thy worst,old Time;despite thy wrong,My love shall in my verse ever live young.</p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+            
+            
+            
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+            
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Heading333</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+            
+            
+            
+          </div><!--/row-->
+        </div><!--/span-->
+
+      
+      </div><!--/row-->
+
+      <hr>
+<!--
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+-->
+    </div><!--/.container-->
+
+<input type="button" value="initTemplet" onclick="loadHtmlinit('right-list-top')"  >
+
+
+
+<!-- 设置界面 -->
+	<div id="console"  >
+				ddddddddddddddddd
+	</div>	
+
+
+
+	<div  id="mask" style="width:100px;height:200px;background-color:#C7EDCC;"   >
+				<input type="button"  value="set" >
+				<input type="button"  value="delete" >
+				<input type="button"  value="moveup" >
+				<input type="button"  value="movedown" >
+	</div>
+
+	
+	<div id="templet_module_company"   ondblclick="company_config_open()"   >
+		
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">company name:</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">company address:</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+		  </div>
+		  	
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">first link:</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">company context:</label>
+		  	<textarea class="form-control" rows="3"></textarea>
+		  </div>
+		
+	</div>
+	
+		
+    
+    
+<script>
+  $(function() {
+  	//排序方法 
+    $( "#left-list-id" ).sortable();
+    $( "#right-list-top" ).sortable();
+    
+    /*
+    $('#mask').css({'opacity':'0.5'});
+    $('#mask').css({'width':'400px'});
+    $('#mask').css({'height':'400px'});
+    $('#mask').draggable();
+    */
+    
+  });
+  //打开控制台方法
+  function openConsole(myobj){
+  	
+	var moduleData =  $(myobj).attr("module-data");	
+	var myConsole = $.parseJSON(moduleData);
+	//读取类型 然后去后台请求配置界面
+	var myContype = myConsole.contype ;
+		var myurl = "http://localhost:8080/web/busin/action/BusinTempletAction_config.do1?templetName=CompanyInfoTempletModule&id=" + myConsole.id ;
+     	$("#tempHtml").load(myurl,function(){
+			var divHtml= $("#tempHtml").html();	
+			var myHtml = "<li >" + 
+      			"<a href='#' class='list-group-item'>" +
+					divHtml 	
+		          + "</a>" +
+		    	"</li>"
+			var newObj = $(myHtml);
+			$("#" + addTemlpeteUl).append(newObj);
+			//出发控件的双击事件
+			$("#" + addTemlpeteUl + " li:last div").trigger("ondblclick");
+			
+		});
+	
+	console.dir(myConsole);
+	
+//	console.dir(mydata);
+	
+//  	$("#console").dialog({
+//      resizable: false,
+//      height:140,
+//      modal: true,
+//      buttons: {
+//        "save": function() {
+//          alert("save");
+//        },
+//        cancel: function() {
+//          $( this ).dialog( "close" );
+//        }
+//      }
+//     });
+	}
+    //加载模版方法
+     function loadHtmlinit(myHtmlId){
+     	
+     }
+		 //添加新的控件	
+     function addNewTemplet(addTemlpeteUl,moduleObj ){
+	    console.dir(moduleObj);
+		moduleObj.init(addTemlpeteUl);
+		
+	 
+	 		 
+	 }
+	 
+	 $("#ccc111").dialog();
+	 var globalFunction = {};
+	 
+  </script>
+
+<div id="tempHtml" ></div>
+  </body>
+</html>

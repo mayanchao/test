@@ -1,0 +1,1182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>设置界面</title>
+		<script src="js/jquery-1.10.1.js"  >  </script>
+		<script src="js/jquery-ui-1.10.2.custom.js"  >  </script>		
+		<script src="js/jquery.json-2.4.js"  >  </script>
+		
+		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.2.custom.css" />
+		
+		<!-- 需要加载 css-->
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/css.css" rel="stylesheet" type="text/css" />
+		
+		<style>
+		  .ui-menu { width: 150px; }
+		  .ui-menu2 { width: 150px; }
+		 </style>
+  
+</head>
+<!--
+	<body  id="parentBody"  >
+-->
+		<body  id="parentBody"   background="\image\bak1.JPG"  >
+<div>
+	<!--
+<script type="text/javascript">
+var _py = _py || [];
+_py.push(["-i.eD",760,90]);
+document.write("<script type=\"text/javascript\" src=\"http://fm.p0y.cn/j/imp-fixed.js\"><\/script>");
+</script>
+</div>
+<iframe src="http://cm.ipinyou.com/query/cookie.jsp" frameborder="0"></iframe>
+-->
+
+
+	
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+	<div id="consoleDebug"   >
+		<div id="tabs">
+			<ul>
+				<li><a href="#tools_operateConsole">属性面盘</a></li>
+				<li><a href="#composeAdd">JS方法集</a></li>
+				<li><a href="#tabs-3">调试</a></li>
+				<li><a href="#tabs-4">后台流程</a></li>
+				<li><a href="#tabs-5">复合SQL</a></li>
+				<li><a href="#tabs-6">本页属性</a></li>
+			</ul>
+			<div id="tools_operateConsole">
+				
+			</div>
+			<div id="composeAdd">
+				
+				
+				
+				<!--
+					<ul id="menu2"  style="width:150px">						  
+						  <li>
+						    <a href="#">添加组件</a>
+						    <ul>
+						      <li><a href="#"><span class="ui-icon ui-icon-seek-start"></span>文本框</a></li>
+						      <li><a href="#"><span class="ui-icon ui-icon-stop"></span>复选框</a></li>
+						      <li><a href="#"><span class="ui-icon ui-icon-play"></span>单选框</a></li>
+						      <li><a href="#"><span class="ui-icon ui-icon-seek-end"  ></span>Next</a></li>
+						    </ul>
+						  </li>
+						</ul>
+				-->		
+			</div>
+			<div id="tabs-3" >
+				<br>================= 生成   和ajax=====================<br>
+				<input type="button"  value="保存控件和生成" onclick="buildHtml()" >
+				<input type="button"  value="测试ajax"  onclick="globalFunction.autoBuild_communication_ajax.build()" >
+				
+				<br>================= html控件=====================<br>
+				<input type="button"  value="测试label" onclick="globalFunction.autoBuild_html_text_label.build()" >
+				<input type="button"  value="测试text"  onclick="globalFunction.autoBuild_html_input_text.build()" >
+				<input type="button"  value="单选"      onclick="globalFunction.autoBuild_html_input_radio.build()" >
+				<input type="button"  value="复选"      onclick="globalFunction.autoBuild_html_input_checkbox.build()" >
+				<input type="button"  value="测试A"  onclick="globalFunction.autoBuild_html_text_a.build()" >
+				<input type="button"  value="测试img"   onclick="globalFunction.autoBuild_html_image_img.build()" >				
+				<input type="button"  value="测试password" onclick="globalFunction.autoBuild_html_input_password.build()" >
+				<input type="button"  value="测试menu"  onclick="globalFunction.autoBuild_html_menu_menuFrame.build()" >
+				<input type="button"  value="测试table" onclick="globalFunction.autoBuild_html_table_sampleTable.build()" >
+				<input type="button"  value="测试active" onclick="active1()" >				
+				<input type="button"  value="测试浮层" onclick="globalFunction.autoBuild_html_dialogPanel_dialogSimple.build()" >
+				
+				<br>================= 按钮=====================<br>
+				<input type="button"  value="测试button" onclick="globalFunction.autoBuild_html_input_button.build()" >
+				
+				
+				
+			</div>
+			<div id="tabs-4" >
+				<table border="1" >
+					<tr>
+						 <td  colspan=2 >
+						 	步骤ID <input  type="text"  id="background_setp_AutoSetpId"  value="voteScenery"  />
+						 	<!--
+						 	步骤ID <input  type="text"  id="background_setp_AutoSetpId"  value="setpok"  />
+							-->							
+							<input value="加载步骤"  type="button" onclick="background_loadSetp( )"   />							
+						 	<input value="保存所有步骤" type="button"  onclick="background_saveAllSetp()"   />
+							 <!-- 
+							 <input value="保存当前步骤" type="button"  onclick="background_saveCurrentSetp()"   />
+							 -->
+							  <input value="添加叶节点" type="button"  onclick="background_addSetp({setpType:'NumberOperate',text:'步骤名称'})"   /> 
+							 <input value="删除" type="button"  onclick="background_deleteCurrentSetp()"   />
+						 </td>
+					</tr>
+					
+					<tr>
+						<td>
+							<select id="background_stepList"  onchange="background_change_sept()"  size=10>
+							</select>					
+						</td>
+						<td>
+							<table border=1  >
+								<tr>
+									<td>类型</td>
+									<td>
+										<select id="background_type"  onchange="show_workflow_type_select_chance()"   >
+											<option value="FindSingleDateFromRequestOperate" >FindSingleDateFromRequestOperate(从request获取值到值链表)</option>
+											<!--
+											<option value="FindSingleDateFromMemcacheOperate" >FindSingleDateFromMemcacheOperate(从memcache获取值到值链表)</option>
+											-->
+											<option value="FindSingleDateOperate" >FindSingleDateOperate(从数据库中获取值)</option>											
+											<option value="IfCondition" >IfCondition（真假结果判断）</option>
+											<option value="NumberOperate" >NumberOperate(数字判断)</option>
+											<option value="EqualOperate">EqualOperate (是否相等判断)</option>
+											<option value="PageMove">PageMove(页面跳转)</option>
+											<option value="NumberOperate">NumberOperate(数值操作)</option>
+											<option value="UpdateSingleDateOperate">UpdateSingleDateOperate(更新单条数据)</option>
+											<option value="InsertSingleDateOperate">InsertSingleDateOperate(插入单条数据)</option>
+											<option value="ExamComplexSqlOperate">ExamComplexSqlOperate(查询复杂SQL)</option>
+											<option value="SessionInputOperate">存入session值</option>
+											<option value="SessionOutputOperate">取出session值</option>
+											<option value="EvaluateDataFromMapOperate">对象赋值</option>
+											
+											
+											
+										</select>
+									</td>
+								</tr>								
+								<tr><td>父点</td><td><input type="text" id="background_parentId"  readonly size=40  />(父节点)</td></tr>
+								<tr><td>属性</td><td><input type="text"  ondblclick=show_workflow_param_Input(this) id="background_param_json"  size=40 />（双击改值）</td></tr>								
+								<tr><td>移动</td><td><input type="button" value="上移" ><input type="button" value="下移" ></td></tr>
+							</table>
+						</td>
+					</tr>
+				</table>	
+			</div>
+			
+			
+			
+			
+			<div id="tabs-5" >
+				<table>
+					<tr>
+						<td > 
+							<input type='button' value='load' onclick="loadCompoundSqlBuild()" >
+							<input type='button' value='保存' onclick="saveCompoundSqlBuild()" >
+							<input type='button' value='生成' onclick="buildCompoundSqlBuild()" >
+							sqlId:<input type='text'  id="build_compound_sql_id" value="sql6"  >
+							
+						</td >
+					</tr>
+					<!--
+					<tr>
+						<td rownum=3 >
+							备注: <input type='text' size=80  id="build_compound_sql_description"  >
+						</td >
+					</tr>	
+					-->
+				</table>
+				
+				<hr>
+				
+				<input type="button"  value="添加表"  onclick="buildSqlTable({})" >
+				<table id="build_compound_sql_name_table">										
+				</table>
+				<hr>
+				<input type="button"  value="添加条件"  onclick="buildSqlWhere({})" >
+				<table id="build_compound_sql_where_table">
+							
+				</table>
+				<hr>
+				<input type="button"  value="添加显示"  onclick="buildSqlShow({})" >
+				
+				<table id="build_compound_sql_show_table">
+					
+				</table>
+				<hr>
+				<input type="button"  value="添加排序"  onclick="buildSqlOrder({})" >
+				<table id="build_compound_sql_order_table">
+					
+				</table>
+					
+			</div>
+			
+			<div id="tabs-6" >
+				<table  border=1  width="200" >
+					<tr>
+						<td > 
+							<input type="button"  value="保存"   onclick="saveBuildHtmlPage()" >
+						</td >
+						<td > 
+							<input type="button"  value="加载"   onclick="loadBuildHtmlPage()" >
+						</td >
+					</tr>
+					<tr>
+						<td > 
+							页面ID
+						</td >
+						<td > 
+							<input  id="abc_tableNam_id"  type="hidden" >
+								<input id="abc_tableNam_htmlId"  type="text" >
+						</td >
+					</tr>
+					
+					<tr>
+						<td >加载事件1</td >
+						<td > 
+							<input id="abc_tableNam_onload1"  type="text" >
+						</td>
+					</tr>
+					<tr>
+						<td >加载事件2</td >
+						<td > 
+							<input id="abc_tableNam_onload2"  type="text" >
+						</td>
+					</tr>
+					<tr>
+						<td >是否是div</td >
+						<td > 
+							<input id="abc_tableNam_onlyDiv"  type="checkbox" value=1 >
+						</td>
+					</tr>
+					<tr>
+						<td > 
+							描述
+						</td >
+						<td > 
+							<textarea  id="abc_tableNam_descript"  rows="3" cols="20">
+								
+								</textarea>
+						</td>
+					</tr>
+				</table>	
+			</div>	
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+	<!--
+	<div  id="yangmiDiv">
+		<img src="/image/gril/gril1.jpg" id="yangmi"   />
+	</div>
+	-->	
+	
+</body>
+
+<script>
+		//全局变量 122
+		//当前选择的控件
+		currentSelectObj ={};
+		//当前输入框
+		currentSelectInput = {}; 
+		//当前准建ID
+		globalFunction={"idKey":1};
+		//当前需要生成的控件对象
+		globalAllWidget=[];
+		//从url中获取htmlId 并放到全局变量 globalHtmlId 
+		globalHtmlId = getUrlParam("htmlId");
+
+		
+		$('#tabs').tabs();
+		
+	 $('#consoleDebug').dialog({width:650,height:400,title:"属性设置面板" });	
+	 //$("#menu2" ).menu( { position: { at: "right-150 bottom "} });	 
+	 $("#console_button").button();	 
+	 $("#testHello").button();
+	
+	//////=========================公共方法区域========================== 刷新頁面進入
+	function active1(){
+			$("#tabs").tabs( "option","active", 2);
+	}
+	active1();
+	
+	//构建唯一的ID
+	function buildCommonId(){
+			var buildId="buildId" + globalFunction.idKey++;			 	  
+			return buildId;
+	}
+	//=========================auto 自动控件操作区域 ===================
+	//生成页面的html
+	function buildHtml(){		
+		var widgets = [];
+		console.dir(globalAllWidget.length);	
+		for(var i=0;i<globalAllWidget.length;i++){
+			//console.dir(globalAllWidget[i] );
+			var reObj = globalAllWidget[i].buildMyHtml(globalAllWidget[i]);
+			reObj.htmlId = globalHtmlId;//页面编号Id
+			widgets.push(reObj);
+		}
+		//保存控件 到数据库中
+		var jsonStr = $.toJSON( widgets );
+		$.post("/web/singleTable/action/SingleTableAction_saveUpdate.do1?singleTableName=AutoBuildWidgetVO",{"tableJson":jsonStr},
+		   function(data){
+		   	  //控件们都保存到数据库中后 生成页面 
+			  $.post("/web/back/action/BackSAutoetpOperateAction_buildAutoWidgetPage.do1?htmlId=" + globalHtmlId,function(data){
+			  		window.location.reload();
+			  });
+		   	  
+		   }
+		);
+		
+			//输出整个页面
+		//	alert(document.body.innerHTML);
+	}
+	
+	/**
+	 * html控件 创建dom节点时候的工具类方法 给节点付给相关方法，然后最外层包裹<div>元素，并且可以拖拽 
+	 * @param {String} myHtml 字符类型 要创建的dom节点  
+	 * @param {Object} controlObj 创建对象时候用到的对象方法 
+	 */
+	function globalFunctionHtmlCommonBuild(myHtml,controlObj){
+	  //初始化	属性面板
+	  var d = new Date();
+	  //生成全局唯一id 用到html的id字段 	  
+ 	  var buildId = "buildId_" +  globalHtmlId + "_" +  d.getTime() +globalFunction.idKey++;
+	  //在最外层包裹一个div 方便拖拽和统一管理  其中div内的空格就是为了拖拽所用
+	  myHtml = "<div>AAAA" + myHtml + "</div>";	  
+	  var myBuildObj = $(myHtml);
+	  //增加拖拽
+	  myBuildObj.draggable();
+	 //在页面显示
+      $(document.body).append(myBuildObj);
+	  //获取节点内容	  
+	  var realityObject = myBuildObj.find(":only-child")[0];
+	  realityObject = $(realityObject);//用jquery封装一下  	  
+	  //把当前对象 继承加载到他的类型对象上 
+ 	  $.extend(realityObject,controlObj);
+	  realityObject.attr("id",buildId);
+	  realityObject.bind("click",function(){
+		//在控制台展现属性信息
+		currentSelectObj = $.data(document.body,this.id );				
+		controlObj.active(currentSelectObj);
+ 	  });
+		//设置当前对象 并保存到全局控件对象中
+		//把实体内容放入全局控件列表内 这个实体内容，不包括外层的div
+		globalAllWidget.push(realityObject);
+		$.data(document.body,buildId ,realityObject );
+		currentSelectObj = realityObject;
+		controlObj.reload(currentSelectObj);
+	};
+	
+
+//test 
+//  var ccc1 = "aabaa\"";
+////  var zzz1 = ccc1.replace(/&#034;/g,"11111");
+//   var zzz1 = ccc1.replace("\"","\\\"");
+//  alert(zzz1); 
+//	alert(ccc1.indexOf("\""));
+
+
+	
+	/**
+	 * //属性配置界面通用配置，
+	 * @param configParam  配置属性
+	 * @param objectName   要操作的对象名
+	 * @param currObject   当前数据对象 
+	 */
+	function globalConsoleBuild(configParam,objectName,currObject ){
+		//先生成配置界面头部
+	 	var htmlInfo = "<table>" +
+			"<tr><td> <input type='button' value='刷新' onclick='"  + objectName + ".refresh()'  > <input type='button' value='删除' onclick='globalConsoleDelete()'  ></td></tr>" +
+			"</table>	" ;
+	 	htmlInfo +=  "<table>" ;
+		
+		for(var i=0;i<configParam.length;i++){
+			var attrName = configParam[i].attrName;
+			var theValue ="";
+			//获取当前<div>中所包含的对象 
+			var selectObj = currObject;//$(currObject).find(":only-child").context;
+			//alert ( "attrName=" + attrName + " value=" +  $(selectObj).attr(attrName) );
+//			console.log("name=" + $(selectObj).attr(attrName));
+			if($(selectObj).attr(attrName) ){//属性名称是否为空7+	++++
+				//有值，给设置值
+				theValue = $(selectObj).attr(attrName);
+			}else{
+				//取的默认值 
+				theValue =  configParam[i].defaultValue;
+			}			
+			var idname  = objectName.replace(".","_") + "_" + attrName ;
+			//对要显示的值中带有的双引号，做转义
+			//开始拼装属性 
+			
+			//判断是否是选择框
+			if(configParam[i].select!=null){
+				htmlInfo +=   "<tr><td>" + configParam[i].showtext + "</td><td><select   id='" + idname + "' >" ;
+					//开始循环生成选项
+					for(var z=0;z<configParam[i].select.length;z++){
+						var mySelect = "";//是否被选中
+					    if(theValue == configParam[i].select[z].value){
+						   		mySelect = "selected";
+						}
+						htmlInfo += "<option  value='" + configParam[i].select[z].value +  "'  " + mySelect +  ">"  + configParam[i].select[z].show +  "</option>"  ;
+					}
+					htmlInfo +="</select>"+
+					"" + (configParam[i].note!=null ? configParam[i].note :"") +
+					"</td></tr>"  ;
+					
+			}else{//默认是 文本框输入
+				var myOpenJson = "";
+				//如果输入属性框根据 select id框决定值，否则就根据配置的值来决定属性框的值
+				if(configParam[i].openJsonId!=null){
+					myOpenJson = "ondblclick=openJsonTools(this,$('#" + configParam[i].openJsonId + "').val()) ";
+				}
+				else if(configParam[i].openDiv!=null){					
+					if("openValidateDiv" == configParam[i].openDiv){
+						//是校验类型的div							
+						myOpenJson = " ondblclick='openValidateDiv(this)' ";
+					}
+				}
+				else if(configParam[i].openJson!=null){
+					myOpenJson = "ondblclick='openJsonTools(this," + configParam[i].openJson + ")'";
+				}
+					htmlInfo +=   "<tr><td>" + configParam[i].showtext + "</td><td><input style='width:300px' id='" + idname + "'"
+					+  myOpenJson
+			 		+ " type='text'  value=" + theValue + ">  " 
+			 		+ "" + (configParam[i].note!=null ? configParam[i].note :"")
+			 + " </td></tr>" ;				
+			}
+			//同时给把属性 添加到这个对象上 
+			$(selectObj).attr(attrName,theValue);
+		}
+		htmlInfo +="</table>";
+		$("#tools_operateConsole").empty();
+		$("#tools_operateConsole").html(htmlInfo);
+		//控制台界面显示那个模块，例如3就是后台处理模块	初始化界面	
+		$("#tabs").tabs( "option","active", 0);
+			
+	};
+	
+	
+		/**
+	 * 根据当前选择的空间，自动删除空间	  
+	 */
+	function globalConsoleDelete(  ){
+		
+		if(confirm("确认要删除自动控件吗？")==false){
+				return
+		}			
+		for(var i=0;i<globalAllWidget.length;i++){
+			if(globalAllWidget[i].attr("id") == $(currentSelectObj).attr("id") ){
+				console.dir(globalAllWidget[i].widgetId);
+				alert("开始删除" + $(currentSelectObj).attr("id"));
+				//直接调用后台删除
+				$.post("/web/singleTable/action/SingleTableAction_deleteTable.do1?singleTableName=AutoBuildWidgetVO",{"tableJson":"{widgetId:'" + globalAllWidget[i].widgetId + "'}"},
+				   function(data){				   	
+						//globalAllWidget = globalAllWidget.splice(i,i+1);
+						//开始刷新页面
+						location.reload() ;
+				   }
+				);
+			}
+		}
+	};
+	
+	/**
+	 * 根据属性值，自动刷新属性   
+	 * @param configParam  配置属性
+	 * @param objectName   要操作的对象名
+	 * @param currObject   当前数据对象 
+	 */
+	function globalConsoleRefresh(configParam,objectName,currObject ){
+	 //更新图片地址 还有宽和高
+	  for(var i=0;i<configParam.length;i++){
+		  //生成主键， 然后刷新到页面上 
+		  var tempId =  objectName.replace(".","_") + "_"  + configParam[i].attrName;
+//		  alert(tempId + "value=" + $('#' + tempId).val() );
+		  $(currentSelectObj).attr(configParam[i].attrName, $('#' + tempId).val());
+	  }
+	};
+	
+	/**
+	 * 最后build方法存到表时候 的通用公用方法 
+	 */
+	function globalAutoBuildMyHtml(myObj){
+		  //生成标签的width 和 height属性
+		 //var myid = this.attr("id");
+		 var saveObj = {};
+		 for (var i = 0; i < myObj.buildHtml.length; i++) {
+		 	var value = myObj.attr(myObj.buildHtml[i].attrName);
+		 	//判断是否是扩展属性
+			var myWidgetName = myObj.buildHtml[i].extendWidget
+			if ( myWidgetName!= null) {
+					saveObj[myWidgetName] = value;
+			}else {
+				//普通属性 
+			    saveObj[myObj.buildHtml[i].attrName] = value;
+			}
+		 }
+		 console.dir("left=" + myObj.parent().offset().left + " top=" + myObj.parent().offset().top);
+		 
+		 //获取相对位置 
+		 var myLeft = myObj.parent().offset().left;
+		 var myTop =  myObj.parent().offset().top;
+		// myLeft = myLeft - 20 ;//浏览器会自动往右移20 这个是浏览器bug
+		// alert("type=" + myObj.currentName +  "   myLeft=" + myLeft + "myTop=" + myTop);
+//		 if(myLeft<0   || myLeft>300  ){
+//		 	myLeft = 50;
+//		 } 
+//		 if(myTop<0   || myTop>300){
+//		 	myTop =50;
+//		 }
+		 
+		 saveObj["positionLeft"] = myLeft;
+		 saveObj["positionTop"] = myTop;
+		 saveObj["type"] = myObj.currentName;	
+		 if(myObj.widgetId!=null ){//说明是修改的数据，所以也要保存到vo里面 
+			 saveObj["widgetId"] = myObj.widgetId;
+		 }	
+		// return null;
+		 return  saveObj;
+	}
+	//刷新页面重新加载	
+	function globalAutoBuildInit(){
+		//select * from COMPOUND_SQL_TABLE where html_id = 'sql4'
+		$.post("web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=AutoBuildWidgetVO&tableJson={htmlId:'" + globalHtmlId + "'}",
+		   function(data){
+		   	//把当前数据还原 
+//			console.dir(data);
+		    if(data){
+		   	   for(var i=0;i<data.length;i++){
+			   	   //当前数据库中的vo对象 
+			   	   var  autoBuildWidgetVO = data[i];
+				  	eval( autoBuildWidgetVO.type + ".build(autoBuildWidgetVO)");	//如果第二个参数为true，代表是d				
+					//初始化当前对象属性 通过当前类型对象的属性配置buildHtml
+					for(var z=0;z<currentSelectObj.buildHtml.length;z++){
+						var myValue = autoBuildWidgetVO[currentSelectObj.buildHtml[z].attrName];						
+						//是否是扩展属性，然后还原成正式属性
+						if(currentSelectObj.buildHtml[z].extendWidget!=null ){
+							//取出数值 
+							myValue = autoBuildWidgetVO[currentSelectObj.buildHtml[z].extendWidget];							
+						}
+//						alert("name=" + currentSelectObj.buildHtml[z].attrName + "  myValue=" + myValue);
+						currentSelectObj.attr(currentSelectObj.buildHtml[z].attrName,myValue);
+//						alert(currentSelectObj.attr( currentSelectObj.buildHtml[z].attrName ) ) ;
+					}
+					//强行加上widget 属性 
+					var myId = autoBuildWidgetVO.widgetId;
+					//强行把主键加上 
+					currentSelectObj.widgetId = autoBuildWidgetVO.widgetId;					
+					//设置位置
+					//console.dir(currentSelectObj.parent());
+					//console.dir("init======left="+autoBuildWidgetVO.positionLeft + " top="+autoBuildWidgetVO.positionTop);
+					
+					currentSelectObj.parent().offset({left:autoBuildWidgetVO.positionLeft});
+					currentSelectObj.parent().offset({top:autoBuildWidgetVO.positionTop});
+					
+					//currentSelectObj.offset({left:autoBuildWidgetVO.positionLeft});
+					//currentSelectObj.offset({top:autoBuildWidgetVO.positionTop});
+					//然后设置最外层包裹div的 位置
+					
+					//最后根据id把数据放入全局变量
+					$.data(document.body,currentSelectObj.attr("id") ,currentSelectObj );
+				//	currentSelectObj.reload(currentSelectObj);
+			   }
+			  }
+			  //查看有没有label 标签，然后拿出来，强行刷新一下 
+			  
+			  
+			  
+			  //清空控制面板
+			  $("#tools_operateConsole").load("/Null.html",{async:false},function(data){
+			  			
+			  });
+			  
+			  //把设置里的属性页面清空
+			  
+			  
+		   }
+		);
+		
+		
+		
+	}	
+
+	
+	
+	/**
+	 * 从url中获取参数 
+	 * @param {Object} name
+	 */
+	function getUrlParam(name){
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+		var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+		if (r!=null) return unescape(r[2]); return null; //返回参数值
+	} 
+	
+	
+	
+	/*
+	 * 加載当前html页面的信息
+	 */
+	function loadBuildHtmlPage(){
+		$.post("web/singleTable/action/SingleTableAction_findOneTable.do1?singleTableName=AutoBuildHtmlVO&tableJson={htmlId:'" + globalHtmlId + "'}",
+		   function(data){
+		   		$("#abc_tableNam_id").val(data.id);
+				$("#abc_tableNam_htmlId").val(data.htmlId);
+				$("#abc_tableNam_descript").val(data.description);
+				$("#abc_tableNam_onload1").val(data.onload1);
+				$("#abc_tableNam_onload2").val(data.onload2);
+		
+			    if(data.onlyDiv==1){
+					$("#abc_tableNam_onlyDiv").attr("checked",'true');
+				}
+		   }
+		);			
+	}
+	
+	/*
+	 * 保存当前html页面的信息
+	 */
+	function saveBuildHtmlPage(){
+		
+		var myObj = {};
+		if ($("#abc_tableNam_id").val().length > 0) {
+			myObj.id = $("#abc_tableNam_id").val();
+		}	
+		myObj.htmlId=$("#abc_tableNam_htmlId").val();
+		myObj.description=$("#abc_tableNam_descript").val();
+		myObj.onload1=$("#abc_tableNam_onload1").val(); 
+		myObj.onload2=$("#abc_tableNam_onload2").val();
+		//alert($('#abc_tableNam_onlyDiv').is(':checked'));
+	    if($('#abc_tableNam_onlyDiv').is(':checked')  ){
+			myObj.onlyDiv=1	;	
+	    }else{
+			myObj.onlyDiv=0;		
+		}
+	
+		var jsonStr = $.toJSON( myObj );
+		$.post("/web/singleTable/action/SingleTableAction_saveUpdate.do1?singleTableName=AutoBuildHtmlVO",{"tableJson":jsonStr},		
+		   function(data){
+		   		console.dir(data);
+		   }
+		);
+	}
+	
+	//=============================================复合sql区域
+	/**
+	 * 保存sql复合语句信息 
+	 */
+	function saveCompoundSqlBuild(){
+		//先保存sql基本信息
+		var sqlId = $("#build_compound_sql_id").val();
+		var paramObj = {compoundSqlId:sqlId};
+		var jsonStr = $.toJSON( paramObj );
+		
+		//清除全部老的数据
+		$.ajax({
+			type:"post",
+			async:false,//同步删除数据
+			url:"/web/singleTable/action/SingleTableAction_deleteTableByWhere.do1?singleTableName=CompoundSqlTableVO",
+			data:{"tableJson":jsonStr}});
+		
+			$.ajax({
+			type:"post",
+			async:false,//同步删除数据
+			url:"/web/singleTable/action/SingleTableAction_deleteTableByWhere.do1?singleTableName=CompoundSqlOrderVO",
+			data:{"tableJson":jsonStr}});
+		
+		
+			$.ajax({
+			type:"post",
+			async:false,//同步删除数据
+			url:"/web/singleTable/action/SingleTableAction_deleteTableByWhere.do1?singleTableName=CompoundSqlShowVO",
+			data:{"tableJson":jsonStr}});
+			
+			$.ajax({
+			type:"post",
+			async:false,//同步删除数据
+			url:"/web/singleTable/action/SingleTableAction_deleteTableByWhere.do1?singleTableName=CompoundSqlVO",
+			data:{"tableJson":jsonStr}});
+		
+			
+			$.ajax({
+			type:"post",
+			async:false,//同步删除数据
+			url:"/web/singleTable/action/SingleTableAction_deleteTableByWhere.do1?singleTableName=CompoundSqlWhereVO",
+			data:{"tableJson":jsonStr}});
+
+		
+		
+		$.post("/web/singleTable/action/SingleTableAction_saveUpdate.do1?singleTableName=CompoundSqlVO",{"tableJson":jsonStr});
+		var mySqlId = $("#build_compound_sql_id").val();
+		
+		//保存表 
+		$("[name='build_compound_sql_where_table_input']").each(function(index, domEle){			
+			var myTable = $(domEle).val();			
+			var myJson = $.parseJSON(myTable);//用户值Json			
+			myJson.compoundSqlId = mySqlId;
+			console.dir(myJson);
+			delete myJson.id; 
+			var jsonStr = $.toJSON( myJson );
+			
+			$.ajax({
+			type:"post",
+			async:false,//同步保存数据
+			url:"/web/singleTable/action/SingleTableAction_saveUpdate.do1?singleTableName=CompoundSqlTableVO",
+			data:{"tableJson":jsonStr}});
+
+		 });
+		 
+   	    //保存条件 
+		$("[name='jsonShowType_build_sql_where_input']").each(function(index, domEle){
+			var myWhere = $(domEle).val();
+			var myJson = $.parseJSON(myWhere);//用户值Json
+			myJson.compoundSqlId = mySqlId;
+			delete myJson.id;			
+			var jsonStr = $.toJSON( myJson );
+			
+			$.ajax({
+			type:"post",
+			async:false,//同步保存数据
+			url:"/web/singleTable/action/SingleTableAction_saveUpdate.do1?singleTableName=CompoundSqlWhereVO",
+			data:{"tableJson":jsonStr}});
+
+			
+			
+		 });		
+		 
+		 
+		//保存要显示的字段 
+		$("[name='build_compound_sql_where_show']").each(function(index, domEle){
+			//c
+			var showColumn = $(domEle).val();	
+			var myJson = $.parseJSON(showColumn);//用户值Json
+			myJson.compoundSqlId = mySqlId;
+			delete myJson.id;			
+			var jsonStr = $.toJSON( myJson );	
+			$.ajax({
+			type:"post",
+			async:false,//同步保存数据
+			url:"/web/singleTable/action/SingleTableAction_saveUpdate.do1?singleTableName=CompoundSqlShowVO",
+			data:{"tableJson":jsonStr}});
+
+
+			
+				
+		});
+		
+		//保存要排序的字段 
+		$("[name='build_compound_sql_where_order']").each(function(index, domEle){
+			
+			var orderType = $(domEle).val();	
+			var myJson = $.parseJSON(orderType);//用户值Json
+			myJson.compoundSqlId = mySqlId;		
+			var jsonStr = $.toJSON( myObj );			
+			delete myJson.id;
+			$.ajax({
+			type:"post",
+			async:false,//同步保存数据
+			url:"/web/singleTable/action/SingleTableAction_saveUpdate.do1?singleTableName=CompoundSqlOrderVO",
+			data:{"tableJson":jsonStr}});
+			
+				
+		});
+		
+	}
+	
+	/**
+	 * 保存sql复合语句信息 
+	 */
+	function loadCompoundSqlBuild(){
+		//先保存sql基本信息
+		var sqlId = $("#build_compound_sql_id").val();
+		var paramObj = {compoundSqlId:sqlId};
+		var jsonStr = $.toJSON( paramObj );
+		
+		//清空界面 		
+		$("#build_compound_sql_order_table").html("");
+		$("#build_compound_sql_name_table").html("");
+		$("#build_compound_sql_where_table").html("");
+		$("#build_compound_sql_show_table").html("");
+		
+		var compoundSqlVO = null;//复合表信息 
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"/web/singleTable/action/SingleTableAction_findOneTable.do1?singleTableName=CompoundSqlVO",
+			data:{"tableJson":jsonStr},
+			success: function(data){			
+				compoundSqlVO = data;
+			}
+		});
+//		console.dir(compoundSqlVO);
+
+		//加载表名数据
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=CompoundSqlTableVO",
+			data:{"tableJson":jsonStr},
+			success: function(data){
+				for (var i = 0; ( data!=null && i<data.length    ); i++) {
+					//加载界面
+					buildSqlTable(data[i]);
+				}
+						
+			}
+		});
+
+
+
+		//加载表的条件数据
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=CompoundSqlWhereVO",
+			data:{"tableJson":jsonStr},
+			success: function(data){
+				for (var i = 0;  (data!=null && i < data.length); i++) {
+					//加载界面
+					buildSqlWhere( data[i] );
+				}		
+			}
+		});
+		
+		//加载表的显示字段数据
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=CompoundSqlShowVO",
+			data:{"tableJson":jsonStr},
+			success: function(data){
+				
+				for (var i = 0;  (data!=null  && i < data.length); i++) {
+					//加载界面
+					buildSqlShow(data[i]);
+				}	
+					
+			}
+		});
+		
+		//加载表的显示字段数据
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=CompoundSqlOrderVO",
+			data:{"tableJson":jsonStr},
+			success: function(data){
+				
+				for (var i = 0; (data!=null  &&  i<data.length); i++) {
+					//加载界面
+					buildSqlOrder(data[i]);
+				}		
+			}
+		});
+		
+	}
+	
+	/**
+	 * 生成当前这个复合sql语句
+	 */
+	function buildCompoundSqlBuild(){
+	  var sqlId = $("#build_compound_sql_id").val();		
+	  //控件们都保存到数据库中后 生成页面 
+	  $.post("/web/back/action/BackSAutoetpOperateAction_buildCompoundSql.do1?compoundSqlId=" + sqlId,function(data){
+	  		alert("生成复合sql完成");
+	  });
+	  
+	}
+	
+	
+	//===========================================================通用区域
+	/**
+	 * 通用删除方法 
+	 */
+	function saveCompoundSqlCommonDelete(myObj){
+		var myparent = $(myObj).parent().parent().remove();
+		
+	}
+	/**
+	 * sql复合语句 添加一个表信息
+	 * var  mycompoundSqlWhere = {compound_sql_id:"testsql",tableName:"userVote",tableNameAils:" myUserVote"};	
+	 *  buildSqlTable(mycompoundSqlWhere);
+	 * @param {Object} compoundSqlTable
+	 */
+	function buildSqlTable(compoundSqlTable){		
+		  var myTable = "<tr><td>表 " ;
+		  var jsonStr = $.toJSON( compoundSqlTable );
+	      myTable += "<input  ondblclick='openJsonTools(this,jsonShowType_build_sql_table)'   type='text' name='build_compound_sql_where_table_input'  value=" + jsonStr + " ><label   >  表的别名就是全小写的 </label>   <input type='button' value='删除' onclick='saveCompoundSqlCommonDelete(this)' > ";
+	  	  $("#build_compound_sql_name_table").append(myTable);
+	}
+	
+			
+	
+	
+	/**
+	 * sql复合语句 添加条件记录
+	 * 	var  mycompoundSqlWhere = {compound_sql_id:"testsql",whereType:"and",param1:"id",param2:"id2"};	
+	 * 	buildSqlWhere(mycompoundSqlWhere);
+	 * @param {Object} compoundSqlWhere
+	 */
+	function buildSqlWhere(compoundSqlWhere){
+		var tableWhere = $("#build_compound_sql_where_table");		
+		 var jsonStr = $.toJSON( compoundSqlWhere );		
+	    var myTable = "<tr><td>条件:<input type='text' ondblclick='openJsonTools(this,jsonShowType_build_sql_where)'  name='jsonShowType_build_sql_where_input'  value=" + jsonStr + " >";
+		myTable +="<input type='button' value='删除' onclick='saveCompoundSqlCommonDelete(this)' ></td></tr>";
+		tableWhere.append(myTable);
+	} 
+	
+	/**
+	 *sql复合语句 添加一条显示记录、
+	 * var  mycompoundSqlShow = {compound_sql_id:"testsql",tableNameAils:"tableAlias",tableColumn:"columnName",};
+	 * buildSqlShow(mycompoundSqlShow);
+	 * @param {Object} compoundSqlShow
+	 */
+	function buildSqlShow(compoundSqlShow){
+		var jsonStr = $.toJSON( compoundSqlShow );
+		  var myTable = "<tr><td>显示 " ;
+	   	  myTable += "<input type='text'    name='build_compound_sql_where_show'   ondblclick='openJsonTools(this,jsonShowType_build_sql_show)'    value=" + jsonStr + " >";
+		  myTable +="<input type='button' value='删除' onclick='saveCompoundSqlCommonDelete(this)' ></td></tr> ";
+	  	  $("#build_compound_sql_show_table").append(myTable);
+	}
+	
+	
+	/**
+	 *sql复合语句 添加一条排序记录
+	 * var  mycompoundSqlShow = {compound_sql_id:"testsql",tableNameAils:"tableAlias",tableColumn:"columnName",orderType:"asc"};
+	 * buildSqlOrder(mycompoundSqlShow);
+	 * @param {Object} compoundSqlShow
+	 */
+	function buildSqlOrder(compoundSqlOrder){
+		var jsonStr = $.toJSON( compoundSqlOrder );
+		  var myTable = "<tr><td>排序 " ;
+		   myTable += "<input type='text' name='sqlShowColumn'   ondblclick='openJsonTools(this,jsonShowType_build_sql_order)'    name='build_compound_sql_where_order'   value=" + jsonStr + " >";
+		  myTable +="<input type='button' value='删除' onclick='saveCompoundSqlCommonDelete(this)' ></td></tr>  ";
+	  	  $("#build_compound_sql_order_table").append(myTable);
+	}
+	 
+</script>	
+<!--
+<script src="autoBuild/html/menu/menuFrame.js"  >  </script>
+ -->
+ 
+<script src="autoBuild/communication/ajax.js"  >  </script>
+<script src="autoBuild/html/table/sampleTable.js"  >  </script>
+
+<script src="autoBuild/html/input/button.js"  >  </script>
+<script src="autoBuild/html/input/text.js"  >  </script>
+<script src="autoBuild/html/input/password.js"  >  </script>
+<script src="autoBuild/html/input/radio.js"  >  </script>
+<script src="autoBuild/html/input/checkbox.js"  >  </script>
+
+
+<script src="autoBuild/html/image/img.js"  >  </script>
+<script src="autoBuild/html/text/label.js"  >  </script>
+<script src="autoBuild/html/text/a.js"  >  </script>
+<script src="autoBuild/html/image/img.js"  >  </script>
+<script src="autoBuild/background/back.js"  >  </script>
+<script src="autoBuild/html/dialogPanel/dialogSimple.js"  >  </script>
+<script src="js/confJs/globalConfig.js"  >  </script>
+
+<div  id="jsonTools"   style="display:none"  ></div>
+<div  id="divTools"   style="display:none"  ></div>
+<!-- json Util 工具 
+<div  id="jsonTools"   style="display:none"  > 
+	<table>
+		<tr><td>name1:</td> <td><input type="text" ></td> <td>说明.............</td></tr>
+		<tr><td>name2:</td> <td><input type="text" ></td> <td>说明.............</td></tr>
+		<tr><td>name3:</td> <td><select> <option>1</option> <option>2</option> <option>3</option></option></select> </td> <td>说明.............</td></tr>
+		
+	</table>
+	<hr>
+	<input type="button" value="保存" >
+</div>
+-->
+<script>
+	//临时调用 为了方便开发 
+	//globalFunction.autoBuild_html_table_sampleTable.build();
+	globalAutoBuildInit();
+	//show_table_param_Input(this,show_table_param_Input_callback)
+//jsonTools工具
+
+
+
+
+/**
+ *  打开校验框架，以div浮层的方式 
+ * @param {Object} mythis  当前激活对象，
+ * @param {Object} url     地址 
+ */
+	function openValidateDiv(mythis ){
+		var validateValue = $(mythis).val();
+		
+		$("#divTools").load("/autoBuild/html/validate/validate.html",{async:true},function(data){
+			
+			//根据输入框的值，填充
+			if(validateValue!=null  && validateValue.length>0){			
+				 var myJson = $.parseJSON(validateValue);//用户值Json				 
+				 for(var i=0;i<myJson.length;i++){
+					var myObj = myJson[i]; //$.parseJSON("" + myJson[i]);//用户值Json
+					var jsonStr=  $.toJSON( myJson[i] );
+					$("#html_validate_regulation_select").append("<option value='"  + jsonStr  + "' >" + myObj.name + "</option>");
+				 }
+			}
+			$('#divTools').dialog({title:"校验设置",
+									width:800,
+									modal:true,
+									close:function(){//关闭时候，把页面值收集一下回写到校验框
+										//把校验总设计界面的值回写到当前界面
+										var  validates = [];										 
+										 $("#html_validate_regulation_select").find("option").each(function(index,data){
+										 	var myObj1 = $(data).val();
+											var  objs = $.parseJSON(myObj1);											
+										 	validates.push(  objs  );
+										  })
+										  console.dir(validates);
+										  
+										//生成返回
+										var jsonStr = $.toJSON( validates );
+										 $(mythis).val(jsonStr);
+									}
+						
+						
+						
+			 });
+			//解析json 
+			 //myJson = $.parseJSON(validateValue);//用户值Json 
+			
+			
+						
+		});
+		$("#tabs").tabs( "option","active", 0 );
+	}
+	
+	
+	
+	
+		
+	
+/**
+ 
+ * 
+ * 
+ * 
+ * @param {Object} myVal     实际json的值
+ * @param {Object} jsonType  json类型或者字符串类型的值 ，在方法中会判断是否成功
+ */
+	function openJsonTools(mythis, jsonType,myCalback){
+		
+		
+		//{"tableName":"sss"}
+		//instanceof String
+		var myVal = $(mythis).val();
+		//当前选中框 给全局，方便回写数据
+		currentSelectInput = $(mythis);
+		var myJson ;		
+		if(myVal!= null && myVal!=""  ) {//判断原输入框是否有值 
+			 myJson = $.parseJSON(myVal);//用户值Json
+		}else{
+			myJson = {};
+		}
+//		alert(jsonType.values==null);
+//		var tempStr = "";
+//		//如果是字符串类型，就必须强行转换成json类型
+//		 if(jsonType.values==null){
+//		 	
+//		 	tempStr = "  var myJsonType = " + jsonType; 
+//		 }
+//		 
+		if (jsonType.values ==null) {
+			
+			eval("jsonType=" + jsonType);
+		} 
+		var len = jsonType.values.length;//读取长度
+		var myHTML = "<table>";
+		for(var i=0;i<len;i++){
+			var  jsonTypeObj =jsonType.values[i];
+			var  theValue = "";
+			
+			if($(myJson).attr(jsonTypeObj.paramVarName)==null){
+				theValue = "";	
+			}else{
+				var  theValue = myJson[jsonTypeObj.paramVarName];
+				 if(theValue==null){
+				 	theValue="";
+				 }
+			}
+			 
+			if (jsonTypeObj.paramType == "String") {
+				// jsonType='1'  是代表 这个输入框是json类型的，方便最后统计				
+				myHTML += "<tr><td>" + jsonTypeObj.paramName + ":</td>  <td  ><input  jsonType='1'  name='" + jsonTypeObj.paramVarName + "' type='text' value= '" + theValue + "'> </td><td>" + jsonTypeObj.paramDetail + "</td>  </tr>";
+			}else	if (jsonTypeObj.paramType == "hidden") {
+				myHTML += "<input jsonType='1' type='hidden'  name='" + jsonTypeObj.paramVarName + "' type='text' value= '" + theValue + "'>";
+			}else	if (jsonTypeObj.paramType == "select") {
+				myHTML += "<tr><td>" + jsonTypeObj.paramName + ":</td>"; 
+				myHTML += "<td><select   jsonType='1'   name='" + jsonTypeObj.paramVarName + "'    >";
+				//取出select列表
+				var values = jsonTypeObj.selectValue.split(",");
+				for(var i=0;i<values.length;i++){
+					var mySeleted = "";
+					if(theValue == values[i]){//当前这个值是被选择的
+						mySeleted = "selected";
+					}					
+					myHTML +=  "<option value='" + values[i] + "'   " + mySeleted + "  >" + values[i] + "</option>";	
+				}
+				myHTML += "</select></td>";
+				myHTML += "</tr>";
+			}
+		}
+		myHTML +="</table>";
+		myHTML +="<hr><input type='button' value='保存'   onclick='saveJsonTools(this)' >"
+		
+		$('#jsonTools').html(myHTML);
+		//把当前的json类型加入json控件中
+		$('#jsonTools').attr("jsonType",jsonType);
+		//把当前操作的对象加入json对象中
+		
+		$('#jsonTools').dialog({title:"json工具",width:1000,close: myCalback    });
+		
+				
+	}
+	
+	
+	/**
+	 * jsonTools json工具 
+	 * @param {Object} myVal 当前值
+	 */
+	function saveJsonTools(myVal){
+		var myJson  = {};
+		//获取当前json 读取空间的类型 
+		var myJsonType  = $('#jsonTools').attr("jsonType");
+		$('#jsonTools').find(" [jsonType='1'] ").each(function(i,data){
+			//获取到json的值  
+			var  theValue = $(data).val();
+				myJson[$(data).attr("name")] = theValue;
+		 });
+		 //把当前的属性，生成json数据，保存到原始输入框中
+		  currentSelectInput.val(JSON.stringify(myJson));
+		  $('#jsonTools').dialog( "close" );
+		  
+	}
+	
+	
+	//=============================validate 校验区域
+	/*
+	 * 显示当前总校验设计界面
+	 */
+	function showValidateConf(obj){
+		$("#tools_operateConsole").load("/autoBuild/html/validate/validate.html",{async:true},function(data){
+			alert(123);
+			
+		});
+	}
+	
+	
+	
+
+
+// select type,position_Left ,position_top,width,height from auto_build_widget where html_id = 'pageList';
+//update auto_build_widget set position_top=200,position_Left=200 where  html_id = 'pageList';
+</script>
+
+
+
+
+</html>

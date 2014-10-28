@@ -1,0 +1,56 @@
+	<table id="globalFunction_autoBuild_html_table_sampleTable_mainTable" style="width:600px"  border=1 >
+		<tr>
+ 			<td align='left'  colspan="3" >加载url:<input id='globalFunction_autoBuild_html_table_sampleTable_loadUrl' type='text' name=param2    style="width:300px;">  </td>
+		</tr>	 			
+		
+		<tr>
+			<td align='left' colspan="3"  >
+				宽度<input  id='globalFunction_autoBuild_html_table_sampleTable_width'  type='text' name=param3  value=400 >
+				高度<input  id='globalFunction_autoBuild_html_table_sampleTable_height' type='text' name=param4  value=200  >
+				分页<input id='globalFunction_autoBuild_html_table_sampleTable_page' type='text'   >
+			</td>
+		</tr>
+		
+		 <tr>
+		 	<!-- 左侧列 -->
+		 	<td>	
+		 		<table  border=1  >
+		 			<tr>
+						<td>
+		 					<input type='button'	 value=刷新   onclick='globalFunction.autoBuild_html_table_sampleTable.refresh()'>
+		 					<input type='button'	 value=添加     onclick="globalFunction.autoBuild_html_table_sampleTable.operateColumnAdd()" >
+							<input type='button'	 value=删除      onclick="globalFunction.autoBuild_html_table_sampleTable.operateColumnRemove()" >
+							<input type='hidden'  id='globalFunction_autoBuild_html_table_sampleTable_hiddenId'   >
+						</td>
+					</tr>
+					<tr>	
+		 				<td>
+		 					<select  id='globalFunction_autoBuild_html_table_sampleTable_columnSelect' size=8   onchange="globalFunction.autoBuild_html_table_sampleTable.columnSelectChange()" style="width:60px;">
+		 						<!--
+		 					  <option> 列1</option>
+							  -->
+		 					</select>
+		 				</td>
+					</tr>	
+		 		</table>
+		 	</td>
+		 	
+		 	<!-- 右侧列 -->
+		 	<td>
+		 		<table border=3   style='width:300'  >  
+		 				<tr  style='width:100' ><td  align='center' >列名</td><td><input id='globalFunction_autoBuild_html_table_sampleTable_columnName'   type='text' name=param4  value="列名字">列表头</td></tr>
+		 				<tr  style='width:100' ><td  align='center' >长度</td><td><input id='globalFunction_autoBuild_html_table_sampleTable_columnWidth'  type='text' name=param4 value=140 ></td></tr>
+						<tr  ><td  align='center' >类型</td><td >
+							<select  id="globalFunction_autoBuild_html_table_sampleTable_methodName"  >
+								<option value="globalToolsTableColumnTextDraw"> 数据列</option>								
+								<option value="globalToolsTableColumnButtonDrawById"> 按钮列</option>								
+								<option value="globalToolsTableColumnEnumeration"> 枚举列</option>
+								<option value="globalToolsTableColumnRadioDrawById"> 单选列</option>
+							</select>
+							
+							</td></tr>
+		 			    <tr  ><td  align='center' >加载事件1</td><td ><input     id='globalFunction_autoBuild_html_table_sampleTable_columnLoad' type='text' name=param4   ondblclick='show_table_param_Input(this,show_table_param_Input_callback)'   >（双击改值）</td></tr>		 			  
+		 		</table>
+		 	</td>
+		</tr>
+	</table>

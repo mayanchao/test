@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+     xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+             http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd              
+             http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+     
+	 <!--
+     <mvc:annotation-driven />	 
+     <context:component-scan base-package="com.mana" />
+	 --> 
+ 	<!--
+	<bean  id="maservice" class="com.mana.web.project.login.service.impl.LoginServiceImpl" />
+	
+	
+	<bean id="shirdrn.do"	   class="org.shirdrn.spring.mvc.ShirdrnController" />
+	<bean id="shirdrnController"	   class="org.shirdrn.spring.mvc.ShirdrnController" />
+	
+	<bean id="shirdrnController123"	   class="org.shirdrn.spring.mvc.ShirdrnController" />
+	-->
+	<!--
+	<bean  id="urlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" >		
+	</bean>
+	
+	
+	
+<bean id="map12"	   class="com.mana.base.web.urlMapping.UrlMapping" >
+		
+</bean>
+-->
+<!--
+	<bean id="shirdrnController"	   class="org.shirdrn.spring.mvc.ShirdrnController" />
+	
+	<bean id="shirdrnUrlMapping"
+	   class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	   <property name="mappings">
+	    <props>
+	    <prop key="/shirdrn.do1">shirdrnController</prop>
+	    </props>
+	   </property>
+	</bean>
+	-->
+ <!--
+ 	<bean  id="maaction" class="com.mana.web.project.login.action.MyAction" />
+ 
+     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+         <property name="prefix">
+             <value>/WEB-INF/jsp/</value>
+         </property>
+         <property name="suffix">
+             <value>.jsp</value>
+         </property>
+     </bean>
+	 
+	 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="root"></property>
+        <property name="maxActive" value="100"></property>
+        <property name="maxIdle" value="30"></property>
+        <property name="maxWait" value="500"></property>
+        <property name="defaultAutoCommit" value="true"></property>
+    </bean>
+	 
+	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:MyBatis-Configuration.xml"></property>
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+	-->
+	<!--
+	 <bean id="userDao" class="com.mana.web.project.login.dao.impl.LoginDaoImpl">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+    </bean>
+	-->
+	
+ </beans>

@@ -1,0 +1,62 @@
+<div id="html_validate_templet" >
+	<table border="1" >
+		<tr>
+			 <td  colspan=2 >
+			 	校验框ID <input  type="text"  id="html_validate_autoWidgetId"  value=""  />				 			 	  
+				 <input value="添加规则"  type="button"  onclick="validateRegulationSelectAdd()"   /> 
+				 <input value="删除规则" type="button"  onclick="validateRegulationSelectDelete()"   />
+			 </td>
+		</tr>		
+		<tr>
+			<td>
+				<select id="html_validate_regulation_select"  style="width:100px" onchange="background_change_sept()"  size=10>
+				</select>					
+			</td>
+			<td>
+				<table border=1  >
+					<tr>
+						<td>校验类型</td>
+						<td>
+							<select id="html_validate_regulation_type"    >
+								<option value="textLength" >textLength(文本输入长度)</option>
+								<option value="isNumber" >  isNumber(必须是数字)</option>
+							</select>
+						</td>
+					</tr>					
+					<tr><td>名称</td><td><input type="text"  ondblclick=show_workflow_param_Input(this) id="html_validate_regulation_name"   /></td></tr>
+					<tr><td>属性</td><td><input type="text"  ondblclick=show_workflow_param_Input(this) id="html_validate_regulation_value"  size=40 />（双击改值）</td></tr>								
+					<tr><td>描述</td><td><textarea  ondblclick=show_workflow_param_Input(this) id="html_validate_regulation_detail"   /></td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	<script>
+
+		//添加校验规则 
+		function autoBuildValidateRegulationSelectAdd(){
+			 	$("#html_validate_regulation_select").append("<option value='{name:'newRule',type:''}'>newRule</option>");
+				
+		}
+		
+		//删除校验规则
+		function autoBuildValidateRegulationSelectDelete(){
+			 	
+		}
+		//选择校验列表
+		function autoBuildValidateRegulationSelectChoose(){
+			 	
+		}
+		//导入校验顺序加载框 
+		function autoBuildValidateRegulationSelectLoad(){
+			
+		}
+		
+	</script>	
+	
+	
+		
+</div>
+
+
+

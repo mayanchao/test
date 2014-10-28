@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.css">
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.css">
+<link rel="stylesheet" href="http://v3.bootcss.com/examples/dashboard/dashboard.css">
+<link rel="stylesheet" href="/css/ui-lightness/jquery-ui-1.10.2.custom.css" />
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+<script src="/js/jquery-ui-1.10.2.custom.js"  >  </script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+
+<script src="/js/jquery.json-2.4.js"  >  </script>
+<script src="/js/common.js"></script>
+
+  </head>
+ 
+  <body>
+		
+	
+		
+		
+    <div class="navbar navbar-fixed-top" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-left">				    
+	      <a class="navbar-brand" href="#">Brand1</a>
+	    </div>
+		<div class="navbar-left">				    
+	      <a class="navbar-brand" href="#">Brand1</a>
+	    </div>
+	
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse  " id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-left">
+	        <li class="active"><a href="#">Link</a></li>
+	        <li><a href="#">Link</a></li>
+	        
+	        <li><a href="javascript:show()">show</a></li>
+	        <li><a href="javascript:hidden()">hidden</a></li>
+	        
+	        
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+	          <ul class="dropdown-menu" role="menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+		  
+	      <form class="navbar-form navbar-left" role="search">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search">
+	        </div>
+	        <button type="submit" class="btn btn-default">Submit</button>
+	      </form>
+		  
+		  
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#">Link</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+	          <ul class="dropdown-menu" role="menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">Separated link</a></li>	
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <div class="container-fluid"   >
+      <div class="row">
+        <div class="col-sm-4 col-md-2 sidebar">
+          <ul class="nav nav-sidebar" id="global_cloud_iaas_servers"  >
+	            <li class="active" onclick="globalTools_menu_collacp(this,event)"  >
+	            	<a href="#">level2</a>
+				</li>
+	            <li><a href="/busin/cloud/index.html?applicationIp=192.168.136.139">&nbsp;&nbsp;&nbsp;&nbsp;192.168.136.139</a></li>
+	            <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Analytics</a></li>
+	                        
+          </ul>
+          
+        </div>
+        
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        	<!-- 表单输入区域 -->
+			
+			<form role="form">
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">ip地址</label>
+			    <input readonly name="applicationId" type="email" class="form-control" id="global_cloud_application_id" placeholder="Enter email" value="192.168.136.139">
+			  </div>
+			  
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">机器上的限制组</label>				
+				<div class="dropdown">
+				  <select  id="global_cloud_limit_group" class="form-control">
+					</select>
+				</div>
+			  
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">应用类型</label>
+			    <div class="dropdown">
+				 	  <select  id="global_cloud_application_type" class="form-control">
+					</select>
+				</div>
+			  </div>
+
+			  
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">扩展属性1</label>
+			    <input name="applicationParam1"  type="text" class="form-control" id="global_cloud_application_param1" placeholder="Password">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">扩展属性2</label>
+			    <input name="applicationParam2" type="text" class="form-control" id="global_cloud_application_param2" placeholder="Password">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">扩展属性3</label>
+			    <input name="applicationParam3" type="text" class="form-control" id="global_cloud_application_param2" placeholder="Password">
+			  </div>
+			  
+				  <button id="global_cloud_limit_button_addTasks" type="button" class="btn btn-default">addTask11</button>
+			</form>
+			
+			
+			
+			<hr>
+			<hr>
+			<hr>
+			
+			
+			
+			
+			<form id="global_cgroup_config_from"  class="form-horizontal" role="form">
+			 
+			</form>
+			
+			<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <input type="button"  class="btn btn-default" onclick="saveCgroupConfig()"  value="保存组修改" />
+			    </div>
+			</div>
+			
+			
+			
+			<hr>
+			<hr>
+			<hr>
+			
+			
+			<!-- 列表区域 -->
+          <h2 class="sub-header">Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover"   >
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                </tr>
+                <tr>
+                  <td>1,007</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td>mauris</td>
+                </tr>
+                <tr>
+                  <td>1,008</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                </tr>
+                <tr>
+                  <td>1,009</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                </tr>
+                <tr>
+                  <td>1,010</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                </tr>
+                <tr>
+                  <td>1,011</td>
+                  <td>eget</td>
+                  <td>nulla</td>
+                  <td>Class</td>
+                  <td>aptent</td>
+                </tr>
+                <tr>
+                  <td>1,012</td>
+                  <td>taciti</td>
+                  <td>sociosqu</td>
+                  <td>ad</td>
+                  <td>litora</td>
+                </tr>
+                <tr>
+                  <td>1,013</td>
+                  <td>torquent</td>
+                  <td>per</td>
+                  <td>conubia</td>
+                  <td>nostra</td>
+                </tr>
+                <tr>
+                  <td>1,014</td>
+                  <td>per</td>
+                  <td>inceptos</td>
+                  <td>himenaeos</td>
+                  <td>Curabitur</td>
+                </tr>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+		<div  id="global_add_cgroup_param_div" > 
+			<select id="global_add_cgroup_param_select"  >
+				<option value="cpu.cfs_period_us" >cpu使用周期</option>
+				<option value="cpu.cfs_quota_us" >cpu分片</option>				
+			</select>
+			
+		</div>
+
+
+
+     
+  </body>
+  
+ 
+  <script type="text/javascript">
+  	
+	//添加限制属性 
+	function addLimitInfo(groupName){
+		$("#global_add_cgroup_param_div").dialog({
+		  buttons:{
+                save:function() {
+                  //取出值，并保存
+				  var mykey = $("#global_add_cgroup_param_select").val();
+				 alert(mykey);
+				var myCgroupConfigInnerHtml = "<div class='form-group'>\n";
+					myCgroupConfigInnerHtml += "	<label for='inputEmail3' class='col-sm-2 control-label'>" + mykey + "</label>\n";
+					myCgroupConfigInnerHtml += "	<div class='col-sm-10'>\n";
+					myCgroupConfigInnerHtml += "		<input    group='" + groupName + "' name='" + groupName + "." + mykey + "' type='email'   class='form-control'  placeholder='Email' value=''  > \n";
+					myCgroupConfigInnerHtml += "	</div>\n";
+					myCgroupConfigInnerHtml += "</div>\n";	
+				 //在当前位置之后添加值
+				 
+				 var myIdgroup = groupName.replace("/","_");				 
+				 $("#"+myIdgroup).after(myCgroupConfigInnerHtml);
+				  this.close();
+                }
+            }
+	   })		
+	}
+	
+  	
+	//保存当前cgroup设置
+	function saveCgroupConfig(){
+		//收集所有属性
+		var gs =$("input[group]");
+		var myurl="";
+		//拼写url
+		$("input[group]").each(function(index,data){
+			//alert( " " + $(data).attr("name")  + "=" + $(data).val() );
+			myurl +=" " + $(data).attr("name")  + "=" + $(data).val() + "&";
+		});
+	
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"http://localhost:8080/web/project/cloud/action/MyAction_buildCgroupSave.do1?applicationIp=" + applicationIp + "&" + myurl,	
+			success: function(data){
+											
+			}
+		});
+		
+		
+	}
+	
+	
+	//获取当前页面的ip地址 
+	var applicationIp = getUrlParam("applicationIp");
+	//初始化当前页面
+	function init(){
+		
+		
+		
+		//获得当前应用列表
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"/web/project/cloud/action/MyAction_findCloudApplicationList.do1",	
+			success: function(data){
+				console.dir(data);
+				$("#global_cloud_application_type").append( "<option  >please select</option>" )
+				for (x in data){//构建下拉列表
+					$("#global_cloud_application_type").append(
+						
+						"<option  value='" + data[x].typeKey + "'>"  + data[x].typeKey + "</option>"
+					);
+	  			}
+			}
+		});
+		
+		
+		//获取当前应用的配置文件 
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"/web/project/cloud/action/MyAction_findCloudGroup.do1?applicationIp=" + applicationIp,	
+			success: function(data){
+				for (x in data){
+					$("#global_cloud_limit_group").append(
+						"<option  value='" + x + "'>"  + x + "</option>"
+					);
+	  			}
+				console.dir(data);
+				
+					//构建当前服务器上的所有组配置信息 
+				var myCgroupConfigInnerHtml = "";
+				for (x in data) {//构建下拉列表
+					var myIdgroup = x.replace("/","_");
+					myCgroupConfigInnerHtml +="<input type='button' onclick=addLimitInfo('" + x + "')  value='add' > <h2 id='" + myIdgroup + "'>"  + x +  "</h2 >   \n";
+					
+					for( mykey in data[x].configMap){//循环每个组的map里面的属性
+						var myObj = data[x].configMap; 
+						var myValue = myObj[mykey]; 
+						myCgroupConfigInnerHtml += "<div class='form-group'>\n";
+						myCgroupConfigInnerHtml += "	<label for='inputEmail3' class='col-sm-2 control-label'>" + mykey + "</label>\n";
+						myCgroupConfigInnerHtml += "	<div class='col-sm-10'>\n";
+						myCgroupConfigInnerHtml += "		<input    group='" + x + "' name='" + x + "." + mykey + "' type='email'   class='form-control'  placeholder='Email' value=" + myValue + "  >\n";
+						myCgroupConfigInnerHtml += "	</div>\n";
+						myCgroupConfigInnerHtml += "</div>\n";
+					}
+				}
+				$("#global_cgroup_config_from").html(myCgroupConfigInnerHtml);
+			}
+		});
+				
+		$.ajax({
+			type:"post",
+			async:false,//同步获取数据
+			url:"/web/project/cloud/action/MyAction_findCloudApplicationList.do1",	
+			success: function(data){
+				console.dir(data);
+				$("#global_cloud_application_type").append( "<option  >please select</option>" )
+				for (x in data){//构建下拉列表
+					$("#global_cloud_application_type").append(
+						
+						"<option  value='" + data[x].typeKey + "'>"  + data[x].typeKey + "</option>"
+					);
+	  			}
+			}
+		});
+		
+		
+		
+	}
+	
+	init();
+	
+	
+			
+	$("#global_cloud_limit_button_addTasks").bind("click",function(){
+		
+		var myurl = "/	web/project/cloud/action/MyAction_buildCloudRun.do1?";
+		  myurl +=  "applicationIp=" +  getUrlParam("applicationIp")
+		  myurl +=  "&applicationType=" +  $("#global_cloud_application_type").val()
+		  myurl +=  "&groupTaskId=" +  $("#global_cloud_limit_group").val()
+		
+			$.ajax({
+		type:"post",
+		async:false,//同步获取数据
+		url:myurl,	
+		success: function(data){
+			
+			
+		}
+	});
+	});
+	
+	
+   	/**
+  	 * 通用菜单集合 
+  	 * @param myobj 当前对象 
+  	 * @param event 出发事件对象 
+  	 */
+  	function globalTools_menu_collacp(myobj,event){
+		
+		$(myobj).parent().children("li").each(function(index,data){			
+	    	if(index!=0){
+	    		$(data).toggle(1000);
+    		}
+	    });
+		//停止冒泡
+		//globalToolsStopBubble(event);
+	}
+	
+	
+	
+	
+	
+	</script>
+  
+</html>

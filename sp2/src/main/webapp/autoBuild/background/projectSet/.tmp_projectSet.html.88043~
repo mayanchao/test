@@ -1,0 +1,74 @@
+<div id="tabs-6"   >
+	<table  border=1  width="200" >
+		<tr>
+			<td > 
+				<input type="button"  value="保存"   onclick="saveBuildHtmlPage()" >
+			</td >
+			<td > 
+				<input type="button"  value="加载"   onclick="loadBuildHtmlPage()" >
+			</td >
+		</tr>
+		<tr>
+			<td > 
+				页面ID
+			</td >
+			<td > 
+				<input  id="abc_tableNam_id"  type="hidden" >
+				<input id="abc_tableNam_htmlId"  type="text" >
+			</td >						
+		</tr>
+		<tr>
+			<td > 
+				工程名ID
+			</td >
+			<td >
+				<input id="abc_tableNam_projectId"  type="text" >
+			</td >						
+		</tr>
+		
+		<tr>
+			<td> 
+				顶部菜单
+			</td>
+			<td> 
+				<input id="abc_tableNam_topMenuId"  type="text" >
+			</td>
+		</tr>
+		<tr>
+			<td > 
+				左侧菜单
+			</td >
+			<td > 
+				<input id="abc_tableNam_leftMenuId"  type="text" >
+			</td >
+		</tr>
+		
+		<tr>
+			<td >加载事件1</td >
+			<td > 
+				<input id="abc_tableNam_onload1"  type="text" >
+			</td>
+		</tr>
+		<tr>
+			<td >加载事件2</td >
+			<td > 
+				<input id="abc_tableNam_onload2"  type="text" >
+			</td>
+		</tr>
+		<tr>
+			<td >是否是div</td >
+			<td > 
+				<input id="abc_tableNam_onlyDiv"  type="checkbox" value=0 >
+			</td>
+		</tr>
+		<tr>
+			<td > 
+				描述
+			</td >
+			<td > 
+				<textarea  id="abc_tableNam_descript"  rows="3" cols="20">
+					</textarea>
+			</td>
+		</tr>
+	</table>	
+</div>	

@@ -1,0 +1,62 @@
+	<table id="globalFunction_autoBuild_html_table_sampleTable_mainTable" style="width:600px" >
+		 <tr>
+		 	<!-- 左侧列 -->
+		 	<td>	
+		 		<table  border=1  >
+		 			<tr>
+		 				<td>
+		 					<input type='button'	 value=刷新   onclick='globalFunction.autoBuild_html_table_sampleTable.refresh()'>
+		 					<input type='hidden'  id='globalFunction_autoBuild_html_table_sampleTable_hiddenId'   >
+		 				</td>
+		 				<td>
+		 					<select  id='globalFunction_autoBuild_html_table_sampleTable_columnSelect'   onchange="globalFunction.autoBuild_html_table_sampleTable.columnSelectChange()" >
+		 						<!--
+		 					  <option> 列1</option>
+							  -->
+		 					</select>
+							<input type='button'	 value=添加     onclick="globalFunction.autoBuild_html_table_sampleTable.operateColumnAdd()" >
+							<input type='button'	 value=删除      onclick="globalFunction.autoBuild_html_table_sampleTable.operateColumnRemove()" >
+		 				</td>
+		 			</tr>
+		 			<tr>
+		 				<td align='center' >加载url</td>	
+		 				<td><input id='globalFunction_autoBuild_html_table_sampleTable_loadUrl' type='text' name=param2 ></td>
+		 			</tr>		 			
+		 			<tr>
+		 				<td align='center' >分页</td>	
+		 				<td><input id='globalFunction_autoBuild_html_table_sampleTable_page' type='text'   ></td>
+		 			</tr>
+					<tr>
+		 				<td align='center'   >宽度</td>	
+		 				<td><input  id='globalFunction_autoBuild_html_table_sampleTable_width' type='text' type='text' name=param3  id='globalFunction_autoBuild_html_table_sampleTable_width' value=400 ></td>
+		 			</tr>
+					<tr>
+		 			<td align='center'   >高度</td>	
+		 				<td><input   id='globalFunction_autoBuild_html_table_sampleTable_height' type='text' name=param4  id='globalFunction_autoBuild_html_table_sampleTable_height' value=200  ></td>
+		 			</tr>
+		 		</table>
+		 	</td>
+		 	<!-- 中间列 -->
+		 	<td>
+		 			&nbsp;
+		 			&nbsp;
+		 			&nbsp;
+		 			&nbsp;
+		 	</td>
+		 	<!-- 右侧列 -->
+		 	<td>
+		 		<table border=3   style='width:300'  >  
+		 				<tr  style='width:100' ><td  align='center' >列名</td><td><input id='globalFunction_autoBuild_html_table_sampleTable_columnName'   type='text' name=param4  value="列名字"></td></tr>
+		 				<tr  style='width:100' ><td  align='center' >长度</td><td><input id='globalFunction_autoBuild_html_table_sampleTable_columnWidth'  type='text' name=param4 value=140 ></td></tr>
+						<tr  ><td  align='center' >类型</td><td >
+							<select>
+								<option value="globalToolsTableColumnTextDraw"> 数据列</option>
+								<option value="globalToolsTableColumnButtonDraw"> 按钮列</option>
+							</select>
+							
+							</td></tr>
+		 			    <tr  ><td  align='center' >加载事件1</td><td ><input     id='globalFunction_autoBuild_html_table_sampleTable_columnLoad' type='text' name=param4   ondblclick='openJsonTools(this,back_autobuild_table_column)'   >（双击改值）</td></tr>		 			  
+		 		</table>
+		 	</td>
+		</tr>
+	</table>

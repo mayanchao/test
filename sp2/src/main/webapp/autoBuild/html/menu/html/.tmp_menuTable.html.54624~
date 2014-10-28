@@ -1,0 +1,41 @@
+<table id="globalFunction_autoBuild_html_menu_simplemenu_mainTable" style="width:600px"  border=1 >
+	 <tr>
+	 	<!-- 左侧列 -->
+	 	<td>	
+	 		<table  border=1  >
+	 			<tr>
+					<td>
+						<input type='button'	 value=刷新   onclick='globalFunction.autoBuild_html_menu_simpleMenu.refresh()'>
+	 					<input type='button'	 value=添加   onclick='globalFunction.autoBuild_html_menu_simpleMenu.add()'>
+						<input type='button'	 value=删除      onclick="globalFunction.autoBuild_html_menu_simpleMenu.remove()" >							
+					</td>
+				</tr>
+				<tr>	
+	 				<td>
+	 					<select  id='globalFunction_autoBuild_html_menu_sampleMenu_columnSelect' size=8   onchange="globalFunction.autoBuild_html_table_sampleTable.columnSelectChange()" style="width:60px;">
+	 						<!--
+	 					  <option> 列1</option>
+						  -->
+	 					</select>
+	 				</td>
+				</tr>	
+	 		</table>
+	 	</td>
+	 	
+	 	<!-- 右侧列 -->
+	 	<td>
+	 		<table border=3   style='width:300'  >  
+	 				<tr  style='width:100' ><td  align='center' >名字</td><td><input id='globalFunction_autoBuild_html_menu_simpleMenu_menuname'   type='text' name=param2  ></td></tr>
+	 				<tr  style='width:100' ><td  align='center' >层级</td><td><input id='globalFunction_autoBuild_html_menu_simpleMenu_menuFather' type='text' name=param3  ></td></tr>
+					<tr  ><td  align='center' >类型</td><td >
+						<select  id="globalFunction_autoBuild_html_menu_simplemenu_url_type"  >
+							<option value="globalToolsSimpleMenuColumn_url"> 单页面</option>								
+							<option value="globalToolsTableColumnButtonDrawById"> 整页面</option>
+						</select>
+						
+						</td></tr>
+	 			    <tr  ><td  align='center' >设置111</td><td ><input     id='globalFunction_autoBuild_html_table_sampleTable_columnLoad' type='text' name=param4   ondblclick='show_menu_param_input(this,show_menu_param_input_callback)'   >（双击改值）</td></tr>		 			  
+	 		</table>
+	 	</td>
+	</tr>
+</table>

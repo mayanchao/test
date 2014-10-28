@@ -1,0 +1,146 @@
+<table  style="width:600px"  border=1 >
+	<tr>
+		<td align='left'  colspan="1" >角色名:
+			<input id='globalFunction_autoBuild_back_role_name' type='text'  >  
+			<br>备注:<input id='globalFunction_autoBuild_back_role_descript' type='text'  >
+			<input id='globalFunction_autoBuild_back_role_project_id' type='hidden'   >
+		</td>
+		<td align='left'  colspan="1" >
+			<input type='button' value="加载角色"  onclick="globalFunction_autoBuild_back_role_finalload()" > 
+			<input type='button' value="保存"   onclick='globalFunction_autoBuild_back_role_finalsave()'>
+		</td>
+	</tr>
+	<tr>
+	 	<!-- 左侧列 -->
+	 	<td>	
+	 		<table  border=1  >
+	 			<tr>
+					<td>
+	 					
+	 					<input type='button'	 value=添加     onclick="globalFunction_autoBuild_back_role_add()" >
+						<input type='button'	 value=删除      onclick="globalFunction_autoBuild_back_role_delete()" >
+					</td>
+				</tr>
+				<tr>	
+	 				<td>
+	 					<select  id='globalFunction_autoBuild_back_role_manager_list' size=8   onchange="globalFunction_autoBuild_back_role_modify()" style="width:60px;">
+	 						<!--
+	 					  <option> 列1</option>
+						  -->
+	 					</select>
+	 				</td>
+				</tr>	
+	 		</table>
+	 	</td>
+	 	
+	 	<!-- 右侧列 -->
+	 	<td>
+	 		<table border=3   style='width:300'  > 
+	 				
+					<tr  >
+						<td  align='center' >步骤ID</td>
+						<td >
+							<input id='globalFunction_autoBuild_back_role_manager_setpId' type="text" value=""  >
+							<input type="button" value="保存修改"  onclick="globalFunction_autoBuild_back_role_savemodify()"  >
+						</td>
+					</tr>
+	 			    		 			  
+	 		</table>
+	 	</td>
+	</tr>
+</table>
+
+<script >
+	
+	//保存修改
+	function globalFunction_autoBuild_back_role_savemodify(){
+		
+		var myOptionIndex = $('#globalFunction_autoBuild_back_role_manager_list option:selected');
+		if(myOptionIndex.length == 0){
+			alert("必须选择一个步骤ID" );
+			return false;
+		}	
+		myOptionIndex.val($("#globalFunction_autoBuild_back_role_manager_setpId").val());
+	}
+	
+	/**
+	 * 添加检验角色
+	 */
+	function globalFunction_autoBuild_back_role_add(){
+		$("#globalFunction_autoBuild_back_role_manager_list").append("<option value='' >新流程</option>");
+		$("#globalFunction_autoBuild_back_role_manager_setpId").val( );	
+	}	
+	/**
+	 * 删除检验步骤
+	 */
+	function globalFunction_autoBuild_back_role_delete(){
+		var myOptionIndex = $('#globalFunction_autoBuild_back_role_manager_list option:selected').remove();
+	}
+	/**
+	 * 修改
+	 */
+	function globalFunction_autoBuild_back_role_modify(){
+		var myOptionIndex = $('#globalFunction_autoBuild_back_role_manager_list option:selected');				
+		$("#globalFunction_autoBuild_back_role_manager_setpId").val(myOptionIndex.val());		
+	}
+	/**
+	 * 最终保存
+	 */
+	function globalFunction_autoBuild_back_role_finalsave(){
+		var roleName = $("#globalFunction_autoBuild_back_role_name").val();
+		//有当前projectId,和role的 auto_security_role AutoSecurityRoleVO
+		$.ajax({
+			type: "post",
+			async: false,//同步删除数据
+			url: "/web/singleTable/action/SingleTableAction_deleteTableByWhere.do1?singleTableName=AutoSecurityRoleVO",
+			data: {
+				"tableJson": "{projectid:'" + globalProjectId + "',name:'" + roleName + "'}"
+			}
+		});
+		alert(globalProjectId);
+		$('#globalFunction_autoBuild_back_role_manager_list option').each(function(index, mydata){
+			var myValue = $(mydata).val();
+			var myobj = {};
+			myobj.name = $("#globalFunction_autoBuild_back_role_name").val();
+			myobj.description = $("#globalFunction_autoBuild_back_role_descript").val();
+			myobj.projectId = globalProjectId ;
+			myobj.operateSetpId = myValue;
+			var jsonStr = $.toJSON( myobj );
+			
+			//循环添加数据
+			$.post("/web/singleTable/action/SingleTableAction_save.do1", {
+				"tableJson": jsonStr,
+				"singleTableName": "AutoSecurityRoleVO"
+			}, function(data){
+				console.dir(data);
+			});
+			
+		});
+	}	
+		
+	/**
+	 * 加载角色Id
+	 */
+	function globalFunction_autoBuild_back_role_finalload(){
+		$.ajax({
+			type:"post",
+			async:false,//同步处理
+			url:"/web/singleTable/action/SingleTableAction_findTable.do1",
+			data: {
+				"tableJson": "{projectid:'" + globalProjectId + "',name:'" + roleName + "'}"
+			},
+			success:function(data){
+				$("#globalFunction_autoBuild_back_role_manager_list").empty();						
+				//初始化list表
+				for(var i=0;(data!=null && i<data.length);i++){
+					var varItem = new Option("节点" , data[i].operateSetpId );
+					document.getElementById("globalFunction_autoBuild_back_role_manager_list").options.add(varItem);
+					$("#globalFunction_autoBuild_back_role_descript").val(data[i].description );
+				}
+		   }
+		});
+		
+	}
+	
+</script>
+

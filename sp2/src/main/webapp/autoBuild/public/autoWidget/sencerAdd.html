@@ -1,0 +1,32 @@
+<html><head>
+<script src=/js/common.js  >  </script><script src=/js/jquery-1.10.1.js  >  </script> <script src=/js/jquery-ui-1.10.2.custom.js  >  </script> <script src=/js/jquery.json-2.4.js >  </script> <link rel='stylesheet' href='/css/ui-lightness/jquery-ui-1.10.2.custom.css' /><link href='/css/style.css' rel='stylesheet' type='text/css' /><link href='/css/css.css' rel='stylesheet' type='text/css' /></head><body>
+<meta http-equiv=Content-Type content=text/html; charset=UTF-8 /><label    style='position:absolute;top:32.4573860168457px;left:15.994318008422852px;' id=buildId_sencerAdd_14030169834901 width=100 height=100  >
+名字 </label>
+<label    style='position:absolute;top:135.9517059326172px;left:13.991477012634277px;' id=buildId_sencerAdd_14030169851212 width=100 height=100  >
+状态 </label>
+<input type='text'    style='position:absolute;top:44.005680084228516px;left:105px;' id=buildId_sencerAdd_14030170054743 width=20 height=10 maxlength=10 name=name  value='' />
+<input type='button'    style='position:absolute;top:266.97442626953125px;left:90px;' id=buildId_sencerAdd_14030174144055 width=20 height=20  onclick=globalCommonAjaxbuildId_sencerAdd_14030179002096('null','null','null','null')  value='保存' />
+<div><script >
+function  globalCommonAjaxbuildId_sencerAdd_14030179002096(myValue){
+var ajaxConfig = {myUrl:"/web/singleTable/action/SingleTableAction_save.do1?singleTableName=SceneryVO",inputValue:myValue  }
+ajaxConfig.myUrl=globalToolsTableValueReplace(ajaxConfig.myUrl,ajaxConfig,ajaxConfig.inputValue); 
+myValue=myCallBeforeSimpleFindValue({"ids":"buildId_sencerAdd_14030170054743,buildId_sencerAdd_14039587329688,buildId_sencerAdd_14031009915818","click":"","resultHandler":"tableJson","methodName":""},ajaxConfig,myValue)
+globalToolsAjaxSubmit(ajaxConfig.myUrl,{paramBuildJs:"autoBuild_html_ajax_beforeCall_myCallBeforeSimpleFindValue{'ids':'buildId_sencerAdd_14030170054743,buildId_sencerAdd_14039587329688,buildId_sencerAdd_14031009915818','click':'','resultHandler':'tableJson','methodName':''}",myCallBackFunction:"none(data,none)"},myValue,'asyn');
+}
+</script ></div>
+<label    style='position:absolute;top:199.00567626953125px;left:15.994318008422852px;' id=buildId_sencerAdd_14031009788777 width=100 height=100  >
+次数 </label>
+<input type='text'   validate_buildId_sencerAdd_14031009915818_null(this)   style='position:absolute;top:189.07669067382812px;left:100.99431610107422px;' id=buildId_sencerAdd_14031009915818 width=20 height=10 maxlength=10 name=theCount  value='' />
+<script>
+  function validate_buildId_sencerAdd_14031009915818_null(mythis){
+
+}
+</script>
+  <select     style='position:absolute;top:135.6676025390625px;left:130.9943084716797px;' id=buildId_sencerAdd_14039587329688 width=null height=null  name=state >
+<option  value='1'> 
+启动</option> 
+<option  value='0'> 
+禁用</option> 
+</select>
+</body>
+</html>

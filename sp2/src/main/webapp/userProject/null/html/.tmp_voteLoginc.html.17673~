@@ -1,0 +1,14 @@
+<html><head>
+<link rel='stylesheet' href='http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.css'>
+<link rel='stylesheet' href='http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.css'>
+<link rel='stylesheet' href='http://v3.bootcss.com/examples/dashboard/dashboard.css'>
+<script src='http://cdn.bootcss.com/jquery/1.11.1/jquery.js'></script>
+<script src='http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.js'></script>
+<script src=/js/common.js  >  </script>
+<meta http-equiv=Content-Type content=text/html; charset=UTF-8 /></head>
+<body><body>
+<label    style='position:absolute;top:142.8000030517578px;left:98.4000015258789px;' id=buildId_voteLoginc_14077351888321 width=null height=null  >
+ </label>
+<script>var myCookie= $.cookie('abb'); $('#buildId_voteLoginc_14077351888321').text(myCookie)</script></body>
+</html>
+<body>

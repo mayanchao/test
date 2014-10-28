@@ -1,0 +1,8 @@
+<div class="list-group" ondblclick="base_baseshow_company_js_com.config(this)" 
+  	module-data={"id":"${SelfhelpTempletModuleVO.id}","param1":"${SelfhelpTempletModuleVO.param1}","param2":"${SelfhelpTempletModuleVO.param2}","param3":"${SelfhelpTempletModuleVO.param3}"}
+	id="${SelfhelpTempletModuleVO.id}"
+   >
+  <h2>${SelfhelpTempletModuleVO.param1}</h2>
+  <p>${SelfhelpTempletModuleVO.param2}</p>
+  <p><span class="glyphicon glyphicon-earphone"></span> ${SelfhelpTempletModuleVO.param3}</p>            	
+</div>

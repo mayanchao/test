@@ -1,0 +1,8 @@
+<div class="list-group" ondblclick="openConsole(this)" 
+  	module-data={"id":"${id}","param1":"${param1}","param2":"${param2}","param3":"${param3}"}
+	id="${id}"
+   >
+  <h2>${param1}</h2>
+  <p>${param2}</p>
+  <p><span class="glyphicon glyphicon-earphone"></span> ${param3}</p>            	
+</div>

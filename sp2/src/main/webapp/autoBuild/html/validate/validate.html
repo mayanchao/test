@@ -1,0 +1,102 @@
+<div id="html_validate_templet" >
+	<table border="1" >
+		<tr>
+			 <td  colspan=2 >
+			 	校验框ID <input  type="text"  id="html_validate_autoWidgetId"  value=""  />				 			 	  
+				 <input value="添加规则"  type="button"  onclick="autoBuildValidateRegulationSelectAdd()"   />				  
+				 <input value="删除规则" type="button"  onclick="autoBuildValidateRegulationSelectDelete()"   />
+			 </td>
+		</tr>		
+		<tr>
+			<td>
+				<select id="html_validate_regulation_select"  style="width:100px" onchange="autoBuildValidateRegulationSelectChoose()"  size=10>
+				</select>					
+			</td>
+			<td>
+				<table border=1  >
+					<tr>
+						<td>校验类型</td>
+						<td>
+							<select id="html_validate_regulation_type"    >
+								<option value="textLength" >textLength(文本输入长度)</option>
+								<option value="isNumber" >  isNumber(必须是数字)</option>
+							</select>
+						</td>
+					</tr>					
+					<tr><td>名称</td><td><input type="text"  readonly  id="html_validate_regulation_name"   /></td></tr>
+					<tr><td>属性</td><td><input type="text"  ondblclick=openSetValidateParamShow(this) id="html_validate_regulation_value"  size=40 />（双击改值）</td></tr>													
+					<tr><td>描述</td><td><textarea  id="html_validate_regulation_detail"   /></td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	<script>
+
+		
+	//打开单个校验属性设计界面
+		function openSetValidateParamShow(mythis){
+			//获得类型 	
+			var myVal = $("#html_validate_regulation_type").val();
+			var finalType = eval("autoBuild_html_validate_" + myVal);
+			openJsonTools(mythis, finalType, openSetValidateParamShowCallBack);
+		}
+		
+		/**
+		 * 设置完单个校验规则后保存的方法 
+		 * @param {Object} mythis
+		 */
+		function openSetValidateParamShowCallBack(mythis){
+			saveJsonTools(mythis);
+			//获取到当前回写的值，然后保存到列表中
+			var myVal = $("#html_validate_regulation_value").val();
+			
+			var myJson = $.parseJSON(myVal)
+			//获得当前校验类型，并付给原值
+			var  theType = "autoBuild_html_validate_" + $("#html_validate_regulation_type").val();
+			myJson.type = theType;
+			
+			$("#html_validate_regulation_select option:selected").text(myJson.name );
+			$("#html_validate_regulation_name").val(myJson.name );			
+			//把当前校验规则回写到select选项下来框中 
+			$("#html_validate_regulation_select option:selected").val( $.toJSON(myJson));
+		}
+		
+		//添加校验规则 
+		function autoBuildValidateRegulationSelectAdd(){
+			 $("#html_validate_regulation_select").append("<option value='{\"name\":\"newRule\"}' >newRule</option>");
+		}
+		
+		//删除校验规则
+		function autoBuildValidateRegulationSelectDelete(){
+			 	$("#html_validate_regulation_select option:selected").remove();
+		}
+		
+		
+		//选择校验列表
+		function autoBuildValidateRegulationSelectChoose(){
+			//获取当前选择的值
+			var currentJson =  $("#html_validate_regulation_select").val();
+			eval("var  myJson=" + currentJson  );
+			//把当前选择的校验规则选项框中的 value 转换成json格式，然后在右面面板展现相关属性
+			//var myJson = $.parseJSON("" + currentJson);//用户值Json			
+			$("#html_validate_regulation_name").val(myJson.name);//当前校验规则的名字
+			$("#html_validate_regulation_value").val(currentJson); //描述当前校验规则的json属性
+			if(myJson.type!=null){
+				//获取当前校验框类型，让右边的下拉选项框，显示出类型
+				var types = myJson.type.split("_");								
+				$("#html_validate_regulation_type").val(types[types.length - 1 ] );
+			}
+					
+		}
+		
+		
+		
+	</script>	
+	
+	
+		
+</div>
+
+
+

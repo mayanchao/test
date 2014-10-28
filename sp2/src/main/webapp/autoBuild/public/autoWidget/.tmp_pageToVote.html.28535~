@@ -1,0 +1,20 @@
+<html><head>
+<script src=/js/common.js  >  </script><script src=/js/jquery-1.10.1.js  >  </script> <script src=/js/jquery-ui-1.10.2.custom.js  >  </script> <script src=/js/jquery.json-2.4.js >  </script> <link rel='stylesheet' href='/css/ui-lightness/jquery-ui-1.10.2.custom.css' /><link href='/css/style.css' rel='stylesheet' type='text/css' /><link href='/css/css.css' rel='stylesheet' type='text/css' /></head><body>
+<div style='position:absolute;top:122px;left:10px;'><table  border=1  id=null width=400 height=400  >
+<tr> 
+<td width=  140> 
+soptName</td> 
+<td width=  140> 
+select</td> 
+</tr> 
+</table>
+<table><tr><td><a href=javascript:globalToolsTableBuild(myUrlnull,[{"columnName":"soptName","columnWidth":"140","columnLoad":"{\"columnName\":\"featureName\",\"methodName\":\"globalToolsTableColumnTextDraw\"}"},{"columnName":"select","columnWidth":"140","columnLoad":"{\"columnName\":\"featureName\",\"name\":\"ddd1\",\"methodName\":\"globalToolsTableColumnRadioDrawById\"}"}],'null',-1); > 上一页</a></td><td><a href=javascript:globalToolsTableBuild(myUrlnull,[{"columnName":"soptName","columnWidth":"140","columnLoad":"{\"columnName\":\"featureName\",\"methodName\":\"globalToolsTableColumnTextDraw\"}"},{"columnName":"select","columnWidth":"140","columnLoad":"{\"columnName\":\"featureName\",\"name\":\"ddd1\",\"methodName\":\"globalToolsTableColumnRadioDrawById\"}"}],'null',1); > 下 一页</a></td></tr>
+</table>
+<script >
+ var myUrl667="http://localhost:8080/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=UserVoteVO&tableJson={'status':'1'}";
+globalToolsTableBuild(myUrl667,[{"columnName":"soptName","columnWidth":"140","columnLoad":"{\"columnName\":\"featureName\",\"methodName\":\"globalToolsTableColumnTextDraw\"}"},{"columnName":"select","columnWidth":"140","columnLoad":"{\"columnName\":\"featureName\",\"name\":\"ddd1\",\"methodName\":\"globalToolsTableColumnRadioDrawById\"}"}],'null',0);
+</script ></div>
+<input type='button'    style='position:absolute;top:557px;left:119px;' id=buildId_pageToVote_13998177777062 width=20 height=20  onclick=null('null','null','null','null')  value='vote' />
+<script >
+
+</script></div>

@@ -1,0 +1,50 @@
+<html><head>
+<script src=/js/common.js  >  </script><script src=/js/jquery-1.10.1.js  >  </script> <script src=/js/jquery-ui-1.10.2.custom.js  >  </script> <script src=/js/jquery.json-2.4.js >  </script> <link rel='stylesheet' href='/css/ui-lightness/jquery-ui-1.10.2.custom.css' /><link href='/css/style.css' rel='stylesheet' type='text/css' /><link href='/css/css.css' rel='stylesheet' type='text/css' /></head><body>
+<meta http-equiv=Content-Type content=text/html; charset=UTF-8 /><div style='position:absolute;top:70px;left:7px;'><table  border=1  id=null width=400 height=200  >
+<tr> 
+<td width=  140> 
+景点名称</td> 
+<td width=  140> 
+状态</td> 
+<td width=  140> 
+列名</td> 
+<td width=  140> 
+次数</td> 
+<td width=  140> 
+列名</td> 
+</tr> 
+</table>
+<table><tr><td><a href=javascript:globalToolsTableBuild(myUrlnull,["{\"columnName\":\"景点名称\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"name\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"状态\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"state\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"delete\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_sencerManager_14030205876714\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}","{\"columnName\":\"次数\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"theCount\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"投票\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_sencerManager_14031078513916\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}"],'null',-1); > 上一页</a></td><td><a href=javascript:globalToolsTableBuild(myUrlnull,["{\"columnName\":\"景点名称\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"name\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"状态\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"state\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"delete\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_sencerManager_14030205876714\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}","{\"columnName\":\"次数\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"theCount\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"投票\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_sencerManager_14031078513916\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}"],'null',1); > 下 一页</a></td></tr>
+</table>
+<script >
+ var myUrl655="/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=SceneryVO&tableJson={}";
+globalToolsTableBuild(myUrl655,["{\"columnName\":\"景点名称\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"name\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"状态\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"state\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"delete\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_sencerManager_14030205876714\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}","{\"columnName\":\"次数\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"theCount\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"投票\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_sencerManager_14031078513916\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}"],'null',0);
+</script ></div>
+<input type='button'    style='position:absolute;top:303.9772644042969px;left:25.99431800842285px;' id=buildId_sencerManager_14030198661722 width=20 height=20  onclick=globalDialogbuildId_sencerManager_14030199021423('null','null','null','null')  value='添加' />
+<script >
+function globalDialogbuildId_sencerManager_14030199021423(myValue){
+  var tmpDiv = $('<div> </div>');
+  var urlPath = globalToolsTableValueReplace("/autoBuild/public/autoWidget/sencerAdd.html",{},myValue); 
+  tmpDiv.load(urlPath,{async:false},function(data){
+   tmpDiv.dialog({ modal: true,width:500,height:400,title:''  ,close: function( event, ui ) {alert('close');     tmpDiv.remove()    }} );
+})
+}
+</script ></div>
+<div><script >
+function  globalCommonAjaxbuildId_sencerManager_14030205876714(myValue){
+var ajaxConfig = {myUrl:"/web/singleTable/action/SingleTableAction_deleteTable.do1?singleTableName=SceneryVO",inputValue:myValue  }
+ajaxConfig.myUrl=globalToolsTableValueReplace(ajaxConfig.myUrl,ajaxConfig,ajaxConfig.inputValue); 
+myValue=myCallBeforeBuildTableJson({},ajaxConfig,myValue)
+globalToolsAjaxSubmit(ajaxConfig.myUrl,{paramBuildJs:"myCallBeforeBuildTableJson",myCallBackFunction:"none(null"},myValue);
+}
+</script ></div>
+<input type='button'    style='position:absolute;top:466.97442626953125px;left:27.99715805053711px;' id=buildId_sencerManager_14031024142395 width=20 height=20  onclick=null('null','null','null','null')  value='投票' />
+<div><script >
+function  globalCommonAjaxbuildId_sencerManager_14031078513916(myValue){
+var ajaxConfig = {myUrl:"/web/back/action/BackSAutoetpOperateAction_executeWorkflow.do1?autoSetpId=voteScenery&id=(_id_)",inputValue:myValue  }
+ajaxConfig.myUrl=globalToolsTableValueReplace(ajaxConfig.myUrl,ajaxConfig,ajaxConfig.inputValue); 
+globalToolsAjaxSubmit(ajaxConfig.myUrl,{paramBuildJs:"none",myCallBackFunction:"myCallBackRefreshCurrentPage(null"},myValue);
+}
+</script ></div>
+</body>
+</html>

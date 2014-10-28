@@ -1,0 +1,28 @@
+<html><head>
+<script src=/js/common.js  >  </script><script src=/js/jquery-1.10.1.js  >  </script> <script src=/js/jquery-ui-1.10.2.custom.js  >  </script> <script src=/js/jquery.json-2.4.js >  </script> <link rel='stylesheet' href='/css/ui-lightness/jquery-ui-1.10.2.custom.css' /><link href='/css/style.css' rel='stylesheet' type='text/css' /><link href='/css/css.css' rel='stylesheet' type='text/css' /></head><body>
+<label    style='position:absolute;top:92px;left:118px;' id=buildId_pageModify_13991017154721 width=100 height=100  >
+featname </label>
+<label    style='position:absolute;top:148px;left:126px;' id=buildId_pageModify_13991017184152 width=100 height=100  >
+count </label>
+<label    style='position:absolute;top:202px;left:126px;' id=buildId_pageModify_13991017202253 width=100 height=100  >
+status </label>
+<input type='text'    style='position:absolute;top:134px;left:292px;' id=buildId_pageModify_13991017216874 width=20 height=10 maxlength=10 name=featureName  value='' />
+<input type='text'    style='position:absolute;top:196px;left:288px;' id=buildId_pageModify_13991017289515 width=20 height=10 maxlength=10 name=count  value='' />
+<input type='text'    style='position:absolute;top:256px;left:280px;' id=buildId_pageModify_13991017329046 width=20 height=10 maxlength=10 name=status  value='' />
+<input type='button'    style='position:absolute;top:346px;left:202px;' id=buildId_pageModify_13991017673517 width=20 height=20  onclick=globalCommonAjaxbuildId_pageModify_13991017776888('null','null','null','null')  value='modify' />
+<div><script >
+function  globalCommonAjaxbuildId_pageModify_13991017776888(myValue){
+var ajaxConfig = {myUrl:"/web/singleTable/action/SingleTableAction_update.do1?singleTableName=UserVoteVO",inputValue:myValue  }
+ajaxConfig.myUrl=globalToolsTableValueReplace(ajaxConfig.myUrl,ajaxConfig,ajaxConfig.inputValue); 
+myCallBeforeSimpleFindValue(['{"ids":"buildId_pageModify_13991017216874','buildId_pageModify_13991017289515','buildId_pageModify_13991017329046"','"click":"globalToolsTableColumnButtonDrawById"','"resultHandler":"tableJson"','"methodName":""}'],ajaxConfig)
+globalToolsAjaxSubmit(myUrl,{paramBuildJs:"autoBuild_html_ajax_beforeCall_myCallBeforeSimpleFindValue{'ids':'buildId_pageModify_13991017216874,buildId_pageModify_13991017289515,buildId_pageModify_13991017329046','click':'globalToolsTableColumnButtonDrawById','resultHandler':'tableJson','methodName':''}",myCallBackFunction:"(null"},myValue);
+}
+</script ></div>
+<label    style='position:absolute;top:54px;left:168px;' id=buildId_pageModify_13991361488739 width=100 height=100  >
+id </label>
+<input type='text'    style='position:absolute;top:92px;left:296px;' id=buildId_pageModify_139913615813710 width=20 height=10 maxlength=10 name=id  value='' />
+</body>
+</html>
+<script >
+
+</script></div>

@@ -1,0 +1,268 @@
+https://manamanagenative.googlecode.com/svn/trunk/ 
+密码 dx8MZ3YH5bq6
+1 扫描固定路径下的类编程bean   (弯成)
+  1.1 扫描的目录用静态变量数组标识出来 (弯成)
+  1.2 扫描工程 core + web + exception + ibatis 多个工程合成 (完成)
+  1.3 目录结构   (完成)  	
+2 自动注入service 和dao层  (完成)
+  2.1 用工具方法注入 （完成）
+  2.2 启动项目时候自动生成action service dao 并注入   (完成)
+3 统一异常机制   
+   3.1 spring 的异常接口   
+   3.2 默认异常接口    
+4 事务控制到方法级别，用注释  
+   4.1  开发数据库定位  完成用mysql  完成
+   4.2 底层dao基础类    完成
+   4.3 事务控制
+
+5 默认从action 到 service 到 dao层，不用写代码
+  5.1 单表     完成
+  5.2 多表	完成
+  
+6 拦截接口     
+
+
+
+8 投票网站需求分析 
+
+
+ 1  人员增删改查
+ 	 //功能说明=============================
+     1.1  增加,修改，与删除人员人员名字。
+     1.2  人员信息有 编号,名字,密码  ，并且以弹出层方式弹出 
+     1.3  名字与密码与编号必须都有值
+     1.4  输入人名查找        
+     1.5  人员列表，分页
+     1.6  编号不能重复
+     
+     //页面的URL地址==============================
+        1  人员管理列表  
+                  htmlId=abc444
+        		  url=http://localhost:8080/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=VotePeopleVO&tableJson={}
+        		     显示列:number,name
+        		  
+        	1.1.1	增加搜索按钮,搜索编号
+                                    搜索的URL=/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=VotePeopleVO&tableJson={}	  
+        	      根据number 搜索
+        	      
+        2  添加人员            
+        		   htmlId=add1
+                   url=/web/singleTable/action/SingleTableAction_save.do1?singleTableName=VotePeopleVO
+                   ids=buildId_peopleAdd_14016256665917,buildId_peopleAdd_14016256376093,buildId_peopleAdd_14016256423764
+	 			   showPage=http://localhost:8080/autoBuild/public/autoWidget/peopleAdd.html                      	
+                       	
+        3  修改人员            htmlId=mod1
+        		   url=/web/singleTable/action/SingleTableAction_update.do1?singleTableName=VotePeopleVO
+        		   http://localhost:8080/autoBuild/public/autoWidget/mod1.html  
+        		   
+        4  删除人员       
+               url=/web/singleTable/action/SingleTableAction_deleteTable.do1?singleTableName=VotePeopleVO
+               
+        5 登陆地址 
+               url地址 =http://localhost:8080/web/back/action/BackSAutoetpOperateAction_executeWorkflow.do1?autoSetpId=setpVote&name=name1&password=123456
+            	htmlId=mylogin1
+            	步骤ID=setpVote
+                                         输入框 name与password
+                                        后台流程  
+			   >> 步骤1
+			   	        类型 = 从DSP 组中获取，也就是从request中获取			    	 
+				        名称 = setp1				    
+				        结果VO= com.mana.autoBuild.tableVO.VotePeopleVO
+				       主键名= myVotePeopleFromRequest
+				   id组 = name,password
+			  >> 步骤2
+			          类型 = 从DSP 组中获取，从数据库中获取
+			   	父节点=setp1
+			  	 名称=setp2 
+			  	 结果VO= com.mana.autoBuild.tableVO.VotePeopleVO
+				主键名=  myVotePeopleFromDB
+			  
+			  >> 步骤3
+			  	   类型 = 判断真假
+				  判断值1 myVotePeopleFromRequest.password
+				  判断值2 myVotePeopleFromDB.password
+				  
+			  >> 步骤4
+			            类型 = 导入session
+			           导入主键=   	myVotePeopleFromDB
+			     session主键 =  mySession
+			   >> 成功页面
+			   >> 失败页面 	            	  
+         
+         6 景点信息         
+           6.1  景点管理 
+                url = http://localhost:8080/abc.html?htmlId=sencerManager
+                ajax=http://localhost:8080/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=SceneryVO&tableJson={}
+                show=http://localhost:8080/autoBuild/public/autoWidget/sencerManager.html
+           6.2  景点添加
+           	    htmlId=sencerAdd
+           	    url=/web/singleTable/action/SingleTableAction_save.do1?singleTableName=SceneryVO
+           	    finalUrl =http://localhost:8080/autoBuild/public/autoWidget/sencerAdd.html
+           	          控件  name,state           	    
+           	    buildId_sencerAdd_14030170054743,buildId_sencerAdd_14030173755024
+            6.3 景点删除
+            	/web/singleTable/action/SingleTableAction_deleteTable.do1?singleTableName=SceneryVO
+            
+            
+            
+            6.5 增加期数设置
+              
+            	
+         7 投票操作
+		   7.1  url地址 =http://localhost:8080/web/back/action/BackSAutoetpOperateAction_executeWorkflow.do1?autoSetpId=voteScenery&id=20140618223227781713edd1c195e4873b2aee98ca84d42e0              	
+           7.2  投票逻辑 
+                                           先从request中获取vo，然后从从数据库中获取完整的vo，然后进行加一操作，最后进行保存数据库	
+				http://localhost:8080/web/back/action/BackSAutoetpOperateAction_executeWorkflow.do1?autoSetpId=voteScenery&id=20140618223227781713edd1c195e4873b2aee98ca84d42e0
+				
+				SceneryFromDB.id
+				newPeopleSceneryInterfaceVO.scebertId
+				
+				父节点  saveScenery
+				当前节点 6_newInterfaceVO
+				保存的Class com.mana.autoBuild.tableVO.PeopleSceneryInterfaceVO
+				源点SceneryFromDB.id
+				目标 newPeopleSceneryInterfaceVO.scebertId
+				///===============第二个属性
+				
+				源点 sessionPeople.id
+				目标 newPeopleSceneryInterfaceVO.votePeopleId
+				mySession
+		7.3 一个人只能投一个景点的1票		
+				
+         8复杂SQL语句
+          SELECT VotePeople.name AS VotePeople_name,PeopleSceneryInterface.id AS PeopleSceneryInterface_id
+			FROM VOTE_PEOPLE AS VotePeople, PEOPLE_SCENERY_INTERFACE AS PeopleSceneryInterface
+			WHERE 1=1 AND VotePeople.id=PeopleSceneryInterface.vote_people_id
+              
+  		8 查看景区都被谁投票了
+		     8.1	输入景区名字，查询出景区的名字
+		     8.2	展现出人名，投票时间  
+ 
+         
+          
+     //表结构============================
+		DROP TABLE IF EXISTS vote_people;  
+		create table vote_people(
+		  id  varchar(100),
+		  number   varchar(100) comment  '编号',
+		  name  varchar(100) comment  '名字',
+		  password  varchar(100) comment  '密码',
+		  primary key(id)
+		) ENGINE=InnoDB   DEFAULT CHARSET=utf8;  
+		 		    
+     
+     
+     
+     
+ 
+    
+====优先解决的需求
+1 输入框校验机制 比如姓名不能为空，还有长度 错误信息提示在前台的widge控件上 ok
+2 如果在后台工作流中出现异常，需要直接返回结果  前台后台
+4 增加一个type=hide类型的控件 
+7 权限框架，设计一套有用户，密码，权限，的架构
+8 页面布局架构，左右布局，上下布局等
+9 ajax没用统一判断返回结果的成功与失败
+12 修改方法ajax返回后，要提示成功然后在关闭遮挡层
+
+    
+========================spring工具类 要研究一下
+StringUtils.java
+BeanFactoryUtils.java 
+CollectionUtils.java
+http://www.360doc.com/content/08/1112/12/18042_1909675.shtml
+
+================================自动扫描类
+ScanClassPackage.java 收集要生成bean的类 
+ApplicationServletInitFilter.java 把类放入spring 容器中 
+================================spring mvc 
+UrlMapping.java  把bean映射到对应的url请求上 
+==================================jdbc=========
+DateBaseOperateUtil.java 自动类，自动保存到单表中 这个是个工具类 
+
+
+=========================常用url==============
+创建页面 htmlId是生成的页面号
+  http://127.0.0.1:8080/abc.html?htmlId=page1991
+创建页面后的访问结果页面 
+  http://127.0.0.1:8080/autoBuild/public/autoWidget/page888.html
+根据工作流 处理
+http://localhost:8080/web/back/action/BackSAutoetpOperateAction_executeWorkflow.do1?loginName=abc&password=123456&htmlId=page222
+用户名密码abc/123456
+
+=====================自定义界面说明============
+page222 是登录界面
+page333 是dialog测试调试界面
+page444 是投票列表界面 
+
+====================单表操作==================tableJson属性代表查询参数 
+/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=UserVoteVO&tableJson={'status':'1'}
+===================table列表中列操作的方法 
+globalToolsTableColumnButtonDraw({value:'修改' ,onclick:'alert(111)'},
+
+//==============================table控件的列加载方法 
+globalToolsTableColumnTextDraw('count',
+select count(filename)   from busin_multimedia where bc_id in       (select bc_id          from on_busin_chance         where providerid in               (select distinct providerid                  from newhc_oper.cor_website_move m                 where m.toolsdate >                       to_date('2013-9-19 0:0:0', 'yyyy-mm-dd hh24:mi:ss')                   and m.toolsdate <                       to_date('2013-9-23 0:0:0', 'yyyy-mm-dd hh24:mi:ss')))
+
+实例
+url ==== /web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=UserVoteVO&tableJson={'status':'1'}
+column_count ====== globalToolsTableColumnTextDraw('count',
+column_operate  ====== globalToolsTableColumnButtonDraw({value:'delete',onclick:'globalToolsAjaxSubmit("/web/singleTable/action/SingleTableAction_deleteTable.do1?singleTableName=UserVoteVO&tableJson={id:'(_id_)'}")'},
+
+
+===================================ajax======================中的配置
+{paramBuildJs:"myParam='&'+jQuery.param(mydata);"}  //默认生成方式 
+
+
+globalToolsTableColumnButtonDraw({value:'delete',onclick:'globalCommonAjaxbuildId_pag130_13809008078462','myCallBackFunction':'myCallBackRefreshCurrentPage(null,null,'},
+
+
+globalCommonAjaxbuildId_pag130_13809008078462({'count':'1','featureName':'¹Ê¹¬','id':'aaa111333','sqlParam':{},'status':'1'},{'columnName':'zz','columnWidth':'140','columnLoad':'globalToolsTableColumnButtonDraw({value:'delete',onclick:'globalCommonAjaxbuildId_pag130_13809008078462','myCallBackFunction':'myCallBackRefreshCurrentPage(null,null,'},'})">
+
+
+globalToolsTableColumnButtonDraw({value:'delete',onclick:'globalCommonAjaxbuildId_pag130_13809008078462','myCallBackFunction':'myCallBackRefreshCurrentPage(null,null,'},
+globalToolsTableColumnButtonDraw({value:'delete',onclick:'globalCommonAjaxbuildId_pag130_13809008078462'},
+globalCommonAjaxbuildId_pag130_13809008078462
+newRow +=globalToolsTableColumnButtonDraw({value:'delete',onclick:'globalCommonAjaxbuildId_pag130_13809008078462'},tableConfig[k],currentTr)
+
+http://localhost:8080/web/singleTable/action/SingleTableAction_deleteTable.do1?singleTableName=UserVoteVO&tableJson={'id':(_id_)}
+globalToolsAjaxSubmit("/web/singleTable/action/SingleTableAction_deleteTable.do1?singleTableName=UserVoteVO&tableJson={id:'(_id_)'}")
+
+===========================这个事修改和添加界面 
+http://localhost:8080/abc.html?htmlId=pag123 
+
+
+
+//=====================================恢复控件的位置 
+ update  auto_build_widget set position_left=300,position_top=300  where html_id='peopleManager';
+ 
+  and widget_id = '2013100423333144131710a5587714618a8fa7cf55a1f74b4';
+
+select height,width from auto_build_widget where html_id='peopleManager' and type = 'globalFunction.autoBuild_html_table_sampleTable'
+
+===============temp======================
+{paramBuildJs:"myCallBeforeSimpleFindValue('buildId_autoSpotModify_13823706041184','buildId_autoSpotModify_13823706749535','buildId_autoSpotModify_13823706849696','buildId_autoSpotModify_13825437261079')",myCallBackFunction:'myCallBackRefreshCurrentPage(null'}
+{paramBuildJs:"myCallBeforeSimpleFindValue(['buildId_autoSpotModify_13823706041184','buildId_autoSpotModify_13823706749535','buildId_autoSpotModify_13823706849696','buildId_autoSpotModify_13825437261079'])",myCallBackFunction:'myCallBackRefreshCurrentPage(null'}
+
+
+
+ajax方法名:globalCommonAjaxbuildId_peopleManager_14016449807924
+globalCommonAjaxbuildId_peopleManager_14016453869334
+
+
+//=============bug列表
+
+1 validate模块，在最后提交的时候，需要判断所有控件的校验方法。
+2 table没有最后一页，和超过第一页
+
+3 如果输入错误用户名和密码，登陆肯定不会成功
+4 设置一个登录索引列
+3 用户积分，等级提升
+
+1 富文本框   (ok)
+2 上导航栏 ，左导航栏  (ok)
+4 大文本 字段  (ok)
+
+
+
+

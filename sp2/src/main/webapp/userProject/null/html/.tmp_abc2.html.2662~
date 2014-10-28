@@ -1,0 +1,20 @@
+<html><head>
+<link rel='stylesheet' href='http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.css'>
+<link rel='stylesheet' href='http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.css'>
+<link rel='stylesheet' href='http://v3.bootcss.com/examples/dashboard/dashboard.css'>
+<script src='http://cdn.bootcss.com/jquery/1.11.1/jquery.js'></script>
+<script src='http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.js'></script>
+<script src=/js/common.js  >  </script>
+<meta http-equiv=Content-Type content=text/html; charset=UTF-8 /></head>
+<body><body>
+<div><script >
+function  globalCommonAjaxbuildId_abc2_14073314859471(myValue){
+var ajaxConfig = {myUrl:"/web/singleTable/action/SingleTableAction_save.do1?singleTableName=UserVoteVO&tableJson={"status":"1"}",inputValue:myValue  }
+ajaxConfig.myUrl=globalToolsTableValueReplace(ajaxConfig.myUrl,ajaxConfig,ajaxConfig.inputValue); 
+globalToolsAjaxSubmit(ajaxConfig.myUrl,{paramBuildJs:"none",myCallBackFunction:"none(data,)"},myValue,'asyn');
+}
+</script ></div>
+<input type='button'    style='position:absolute;top:234px;left:94px;' id=buildId_abc2_14073317089472 width=20 height=20  onclick= drop table  if exists  AUTO_BUILD_WIDGET; create table AUTO_BUILD_WIDGET(   widget_Id varchar(100),   id  varchar(100),   type  varchar(100) comment  '?????',   html_ID  varchar(100) comment  'html???',   descript  varchar(200) comment  '??',   width varchar(10),   height varchar(10),   validate varchar(1000) comment  '??',     position_Left varchar(1000),   position_Top varchar(1000),   selfJson  varchar(500) comment  '?????json????',   param1 varchar(1000) comment  '????1',   param2 varchar(1000) comment  '????2',   param3 varchar(1000) comment  '????3',   param4 varchar(1000) comment  '????4',   param5 varchar(1000) comment  '????5',   param6 varchar(1000) comment  '????6',   param7 varchar(1000) comment  '????7',   param8 varchar(1000) comment  '????8',   param9 varchar(1000) comment  '????9',   param_big1 TEXT NULL ,   primary key(widget_Id) )ENGINE=InnoDB   DEFAULT CHARSET=utf8;  ('null','null','null','null')  value='??' />
+</body>
+</html>
+<body>

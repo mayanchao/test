@@ -1,0 +1,126 @@
+<table  style="width:600px"  border=1 >
+	<!--
+	<tr>
+		<td align='left'  colspan="1" >拦截地址:
+			<select  id='globalFunction_autoBuild_back_url_list' size=4   onchange="globalFunction_autoBuild_back_url_change()" style="width:60px;">				
+			</select>
+			<input type='button' value="加载url"  onclick="globalFunction_autoBuild_back_role_finalload()" >									
+		</td>
+		<td align='left'  colspan="1" >
+			<input type='button' value="加载url"  onclick="globalFunction_autoBuild_back_role_finalload()" > 
+			<input type='button' value="保存"   onclick='globalFunction_autoBuild_back_role_finalsave()'>
+			备注:<input id='globalFunction_autoBuild_back_role_descript' type='text'  >
+		</td>
+	</tr>
+	-->
+	<tr>
+	 	<!-- 左侧列 -->
+	 	<td>	
+	 		<table  border=1  >
+	 			<tr>
+					<td>
+	 					<input type='button'	 value=添加对应的角色     onclick="globalFunction_autoBuild_back_url_role_add()" >
+						<input type='button'	 value=删除对应的角色     onclick="globalFunction_autoBuild_back_url_role_delete()" >
+					</td>
+				</tr>
+				<tr>
+	 				<td>
+	 					<select  id='globalFunction_autoBuild_back_url_manager_list' size=8   onchange="globalFunction_autoBuild_back_role_modify()" style="width:60px;">
+	 					</select>
+	 				</td>
+				</tr>	
+	 		</table>
+	 	</td>
+	 	
+	 	<!-- 右侧列 -->
+	 	<td>
+	 		<table border=3   style='width:300'  > 
+				<tr  >
+					<td  align='center' >角色列表</td>
+					<td >
+						<select id="globalFunction_autoBuild_back_role_list_select" >
+							
+						</select>							
+						<input type="button" value="保存修改"  onclick="globalFunction_autoBuild_back_role_savemodify()"  >
+					</td>
+				</tr>
+				<tr  >
+					<td  align='center' ></td>
+					<td >
+						<input type="text" id="globalFunction_autoBuild_back_intercept_url" />						
+						<input type="button" value="加载url"  onclick="globalFunction_autoBuild_back_intercept_loadUrl()"  >
+					</td>
+				</tr>
+	 			    		 			  
+	 		</table>
+	 	</td>
+	</tr>
+</table>
+
+<script >
+	
+	/**
+	 * 加载url
+	 */
+	function globalFunction_autoBuild_back_intercept_loadUrl(){
+		var myText = $("#globalFunction_autoBuild_back_intercept_url").val();
+		
+	}
+	
+	/**
+	 * 加载当前工程所有的角色 ，当前工程的url页面
+	 */
+	function globalFunction_autoBuild_back_url_role_load(){
+		//加载角色
+			$.ajax({
+				type:"post",
+				async:false,//同步处理
+				url:"/web/singleTable/action/SingleTableAction_findTableDistinct.do1",
+				data: {
+					"tableJson": "{projectid:'" + globalProjectId + "'}",
+					"singleTableName": "AutoSecurityRoleVO",
+					"distinctName":"name"   //根据角色名字去重
+				},
+				success:function(data){
+					console.dir(data);
+					$("#globalFunction_autoBuild_back_role_list_select").empty();						
+					//初始化list表
+					for(var i=0;(data!=null && i<data.length);i++){
+						var varItem = new Option(data[i].name , data[i].name );
+						document.getElementById("globalFunction_autoBuild_back_role_list_select").options.add(varItem);
+					}
+			   }
+			});
+			
+//			//加载工程下页面	
+//			$.ajax({
+//				type:"post",
+//				async:false,//同步处理
+//				url:"/web/singleTable/action/SingleTableAction_findTable.do1",
+//				data: {
+//					"tableJson": "{projectId:'" + globalProjectId + "'}",
+//					"singleTableName": "AutoBuildHtmlVO"
+//				},
+//				success:function(data){
+//					//console.dir(data);
+//					$("#globalFunction_autoBuild_back_url_list").empty();						
+//					//初始化list表
+//					for(var i=0;(data!=null && i<data.length);i++){
+//						var varItem = new Option(data[i].name , data[i].id );
+//						document.getElementById("globalFunction_autoBuild_back_url_list").options.add(varItem);
+//					}
+//			   }
+//			});
+			
+	}
+	
+	//当选择新地址栏的时候
+	function globalFunction_autoBuild_back_url_change(){
+		alert(123);
+		//获得当前地址下的所有角色
+		
+	}
+	
+	globalFunction_autoBuild_back_url_role_load();
+</script>
+

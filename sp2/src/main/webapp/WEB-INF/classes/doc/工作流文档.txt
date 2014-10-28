@@ -1,0 +1,207 @@
+
+0 功能与流程说明
+	功能是工作流设置。运行流程，前台请求后，后台有多个工作流节点顺序处理数据 ，链式设计模式。
+
+1 目录说明与 文件说明
+  ==============后台部分
+	1.1 执行工作流的业务类 BackSAutoetpOperateAction.java 方法是executeWorkflow
+	    url 是 http://localhost:8080/web/back/action/BackSAutoetpOperateAction_executeWorkflow.do1?autoSetpId=setpok&loginName=abc&password=123456
+	1.2 工作流对象VO AutoOperateSetpVO.java ，记录当前工作流类型，所用到的参数
+	1.3 TreeUtil.buildTreeFromList(list); 是把数据库中的工作流，组装成树的形式
+	1.4 WorkFlowUtil.executeWorkflowByTreeVO(root, request, response); 执行工作流，根据书节点方式 
+	1.5 DecorationSingleVO 工作流执行节点，主要执行 decorateVO 方法
+	1.6 globalConfig.js配置说明 ，所有输入项配置都在这里 工作流类型节点都是以 back_workflow_operate_开头的变量，
+	1.7 所有工作流节点的实现类 com.mana.autoBuild.operate.singleVO.Impl.* 目录下 。
+	==============前台部分
+	1.1   工作流设置页面内容在 abc.html页面的 tabs-4这个DIV中。
+	1.2   业务类js在 back.js中  background_loadSetp(); 是加载页面
+	      主要想法是 从后台加载所有工作流节点到 background_stepList列表中，名字是工作流名称，值是转换后的JSON。
+	      增上改查都在列表中实现，最后保存的时候删除原先的数据，重新以list中数据为准
+
+2 接口说明
+		2.1 DecorationSingleVO 工作流节点接口
+4 业务类说明 
+	  4.1  字符串对等类 EqualStringOperate.java 
+	  4.2  FindSingleDateFromMemcacheOperate 从memcachedb中获取数据，放入数值链中
+	  4.3  FindSingleDateFromRequestOperate 从request中获取数据，放入数值链中
+		4.4 FindSingleDateOperate  从数据库中获取数据，放入数值链中
+		4.5 NumberOperate  数据增加工作流
+		4.6 PageMove 页面跳转
+
+5 数据库说明 
+	Auto_Operate_Setp 工作流存储表 	
+	
+6 实际数据 
+
+
+
+
+======================================================js框架===================================================
+
+
+=======================================自动构建组件接口=============================
+1 所有组件都集成一个js接口 ，
+	build:function(htmlsrc){}
+		    构建设置界面的html元素
+	reload:function(){
+	      重新加载界面时候调用方法
+	active:function(obj){
+	      在配置界面，选择其中一个控件
+	buildMyHtml:function(obj){
+	      构建最后的html界面
+	refresh: 
+			  页面刷新
+	currentName
+	    //当前控件的名字
+=================================ajax自动构建组件 =================
+工作流程 系统最后会根据控件的名字生成一个 globalCommonAjax + id 方法。
+方法中会生成一段js语句，调用服务器方法，并且在调用前后都执行方法 具体的是 
+paramId5调用前方法名
+paramId6调用前参数
+paramId7调用后方法名
+paramId8调用后参数
+
+
+	        
+=================================table自动构建组件 =================
+先生成table的信息，然后生成一个globalToolsTableBuild方法，参数就是列名构造方法数组
+记录每个列是如何构造的。
+
+=================================alidate 校验框架=======================
+1 设置界面 在 abc.html 里面 调用openValidateDiv()方法就可以。会返回一个json
+2 所有的自动html控件都有一个validate属性，来表示他的校验方式
+3 目前只有text类型的文本框，才支持校验
+4 后台生成校验的js ，方法是BuildValidateHtml.validateBuildTextLength ，会根据校验类型生成<Script>标签的属性 
+   在标签内，会进行多种校验。 并根据结果提示
+5 前端校验    在common.js里面  autoBuild_html_validate_textLength_js（）方法
+6 校验json的常用属性
+   type 		   校验类型
+   handleType  触发方式 onchance onblur
+	 errorType   错误信息提示方式
+	 errorText   错误信息提示语言 
+   
+
+
+==================================自动生成VO框架=======================
+1 需求 根据数据结构生成自动HTML控件的VO， 找出表的字段，生成表结构信息类，字段类型，vo中的方法。
+2 常用类 
+   	DataBaseInfoUtil.java  读取数据库信息工具类   	
+    tableInfoVO 表           表结构工具类
+    
+    
+3 所有表结构中，不能有Int类型的字段出现     
+
+
+
+
+
+
+
+1 动作映射人心
+  点头对肯定意义影响很大 
+   头部动作分类
+    1 隐蔽动作 :用手捂住器官，企图掩饰自己内心的姿势
+    2 紧张动作 :手抓，擦，摸头的动作，整理头部神经
+    3 痛苦思考 :手敲头 ，手掌贴头，手掐眉心，
+    4 精神安定:手撑住头
+2 说话声高头就高，声音低头就低，低头看手表，表示要马上结束谈话
+3 如果鞠躬时候歪着头，但表心智还未完全成熟
+4 如果他频繁点头，但无疑搭讪，代表他要离开了
+5 说话时候做手势有助于思考
+6 手部动作分类：
+	1 十指交叉,受过伤害，有心理阴影
+	2 双肘支撑双手交叉 内心充满自信
+	3 手摸耳朵 缺少自信
+	4 手碰鼻尖 犹豫不决
+	5 手掌摩擦面部，心不在焉
+	6 握手 手心干的人开朗，手心湿的人内向，只是手指握手但表很吝啬
+	7 拍打头部 自我谴责
+	8 摆弄饰物 内向不易透露感情
+	9 耸肩摊手 热情，诚恳，创造生活
+	10 抹嘴柔鼻 捉弄别人，不敢作敢当
+	11 托腮 订好计划，心机重，讨厌错误事情
+	12 社会内向型 双脚站立，左脚在前，左手在兜 ，这种人喜欢安静，
+	13 思考内向型 双脚站立，双手在兜，经常抽出来，又放进去，代表小心谨慎，
+	14 郁闷型 双脚交叉并拢 一手托下巴，另一只手托手的肘关节，这是个工作狂
+	15 服从型 双脚站立，双手往后，感情急躁，经不起爱情考验。但容易和平相触
+	16 进攻型 双手交叉于胸前，双脚平站，有叛逆性，进攻
+	17 双手叉腰，证明有充分准备
+	18 背手站立，自信，控制一切
+	19 双手放臀部，驾驭一切，不拖延，
+	20 双手自然放两边，循规蹈矩
+	21 靠墙站的人，是失意
+7 坐姿紧张
+  轻轻地坐下 心情平和
+  重重坐下   心情烦躁
+  正襟危坐   心理不安
+  侧身坐     心情舒畅
+  倒坐椅子人 心情压抑
+    
+工厂
+抽象工厂
+原型
+建造者
+单利
+
+
+桥梁
+组合
+适配器
+外观
+装修
+享元
+代理
+
+
+命令
+策略
+中介
+链式
+观察者
+访问着
+状态
+模板
+链式
+迭代
+备份
+
+
+
+创建型
+1. Factory Method（工厂方法）
+2. Abstract Factory（抽象工厂）
+3. Builder（建造者）
+4. Prototype（原型）
+5. Singleton（单例）
+
+结构型
+6. Adapter Class/Object（适配器）
+7. Bridge（桥接）
+8. Composite（组合）
+9. Decorator（装饰）
+10. Facade（外观）
+11. Flyweight（享元）
+12. Proxy（代理）
+
+行为型
+13. Interpreter（解释器）
+14. Template Method（模板方法）
+15. Chain of Responsibility（责任链）
+16. Command（命令）
+17. Iterator（迭代器）
+18. Mediator（中介者）
+19. Memento（备忘录）
+20. Observer（观察者）
+21. State（状态）
+22. Strategy（策略）
+23. Visitor（访问者）
+
+
+
+
+
+     
+  
+
+
+

@@ -1,0 +1,43 @@
+	<table id="globalFunction_autoBuild_html_input_sampleSelect_mainTable" style="width:600px"  border=1 >		
+		<tr>
+			<td align='left' colspan="3"  >
+				<input type="button"  value="刷新" onclick="globalFunction.autoBuild_html_input_select.refresh()" >列表
+				ID<input  id='globalFunction_autoBuild_html_input_sampleSelect_id'  type='text'  readonly >
+				name<input  id='globalFunction_autoBuild_html_input_sampleSelect_name' type='text'  >
+			</td>
+		</tr>
+		
+		 <tr>
+		 	<!-- 左侧列 -->
+		 	<td>	
+		 		<table  border=1  >
+					<tr>	
+		 				<td width="200px" >		 					 
+		 					<select  id='globalFunction_autoBuild_html_input_sampleSelect_list' size=8  onclick="globalFunction.autoBuild_html_input_select.modifyShowOption()"  style="width:60px;">
+		 					</select>
+		 				</td>
+					</tr>	
+		 		</table>
+		 	</td>
+		 	
+		 	<!-- 右侧列 -->
+		 	<td>
+		 		<table border=3   style='width:500'  >  
+		 				<tr  style='width:50' >
+		 					<td  align='center' ><input type="button" value="添加" onclick="globalFunction.autoBuild_html_input_select.addOptions()" ></td>
+						    <td>名字<input id='globalFunction_autoBuild_html_input_sampleSelect_add_name'   type='text' ></td>
+							<td>值<input id='globalFunction_autoBuild_html_input_sampleSelect_add_value'   type='text' ></td>
+						</tr>
+						<tr  style='width:50' >
+		 					<td  align='center' ><input type="button" value="修改"  onclick="globalFunction.autoBuild_html_input_select.modifyOptions()"  ></td>
+						    <td>名字<input id='globalFunction_autoBuild_html_input_sampleSelect_modify_name'   type='text' ></td>
+							<td>值<input id='globalFunction_autoBuild_html_input_sampleSelect_modify_value'   type='text' ></td>
+						</tr>
+		 						 			  
+						<tr  style='width:50' >
+		 					<td  align='center' ><input type="button" value="删除"  onclick="globalFunction.autoBuild_html_input_select.deleteOptions()" ></td>
+						</tr>
+		 		</table>
+		 	</td>
+		</tr>
+	</table>

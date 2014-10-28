@@ -1,0 +1,27 @@
+<html><head>
+<script src=/js/common.js  >  </script><script src=/js/jquery-1.10.1.js  >  </script> <script src=/js/jquery-ui-1.10.2.custom.js  >  </script> <script src=/js/jquery.json-2.4.js >  </script> <link rel='stylesheet' href='/css/ui-lightness/jquery-ui-1.10.2.custom.css' /><link href='/css/style.css' rel='stylesheet' type='text/css' /><link href='/css/css.css' rel='stylesheet' type='text/css' /></head><body>
+<meta http-equiv=Content-Type content=text/html; charset=UTF-8 /><div style='position:absolute;top:121px;left:35px;'><table  border=1  id=null width=400 height=200  >
+<tr> 
+<td width=  140> 
+列名</td> 
+<td width=  140> 
+列名</td> 
+</tr> 
+</table>
+<table><tr><td><a href=javascript:globalToolsTableBuild(myUrlnull,["{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"number\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"delete\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_abc444_14025452972492\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}"],'null',-1); > 上一页</a></td><td><a href=javascript:globalToolsTableBuild(myUrlnull,["{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"number\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"delete\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_abc444_14025452972492\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}"],'null',1); > 下 一页</a></td></tr>
+</table>
+<script >
+ var myUrl813="/web/singleTable/action/SingleTableAction_findTable.do1?singleTableName=VotePeopleVO&tableJson={}";
+globalToolsTableBuild(myUrl813,["{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"number\\\",\\\"methodName\\\":\\\"globalToolsTableColumnTextDraw\\\"}\",\"methodName\":\"globalToolsTableColumnTextDraw\"}","{\"columnName\":\"列名\",\"columnWidth\":\"140\",\"columnLoad\":\"{\\\"columnName\\\":\\\"delete\\\",\\\"click\\\":\\\"globalCommonAjaxbuildId_abc444_14025452972492\\\",\\\"myIds\\\":\\\"\\\",\\\"methodName\\\":\\\"globalToolsTableColumnButtonDrawById\\\"}\",\"methodName\":\"globalToolsTableColumnButtonDrawById\"}"],'null',0);
+</script ></div>
+<div><script >
+function  globalCommonAjaxbuildId_abc444_14025452972492(myValue){
+var ajaxConfig = {myUrl:"/web/singleTable/action/SingleTableAction_deleteTable.do1?singleTableName=VotePeopleVO",inputValue:myValue  }
+ajaxConfig.myUrl=globalToolsTableValueReplace(ajaxConfig.myUrl,ajaxConfig,ajaxConfig.inputValue); 
+myCallBeforeBuildTableJson({},ajaxConfig,myValue)
+globalToolsAjaxSubmit(ajaxConfig.myUrl,{paramBuildJs:"myCallBeforeBuildTableJson",myCallBackFunction:"(null"},myValue);
+}
+</script ></div>
+<input type='button'    style='position:absolute;top:409px;left:107px;' id=buildId_abc444_14025553699933 width=20 height=20  onclick=globalCommonAjaxbuildId_abc444_14025452972492('null','null','null','null')  value='按钮' />
+</body>
+</html>

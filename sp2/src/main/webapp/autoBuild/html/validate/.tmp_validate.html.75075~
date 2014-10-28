@@ -1,0 +1,42 @@
+<div id="html_validate_templet" >
+	<table border="1" >
+		<tr>
+			 <td  colspan=2 >
+			 	校验框ID <input  type="text"  id="background_setp_AutoSetpId"  value="setpVote"  />			 	  
+				 <input value="添加校验规则" type="button"  onclick="background_addSetp({setpType:'NumberOperate',text:'步骤名称'})"   /> 
+				 <input value="删除校验规则" type="button"  onclick="background_deleteCurrentSetp()"   />
+			 </td>
+		</tr>		
+		<tr>
+			<td>
+				<select id="background_stepList"  onchange="background_change_sept()"  size=10>
+				</select>					
+			</td>
+			<td>
+				<table border=1  >
+					<tr>
+						<td>校验类型</td>
+						<td>
+							<select id="background_type"    >
+								<option value="FindSingleDateFromRequestOperate" >FindSingleDateFromRequestOperate(从request获取值到值链表)</option>
+								<option value="FindSingleDateFromMemcacheOperate" >FindSingleDateFromMemcacheOperate(从memcache获取值到值链表)</option>
+								<option value="FindSingleDateOperate" >FindSingleDateOperate(从数据库中获取值)</option>											
+								<option value="IfCondition" >IfCondition（真假结果判断）</option>
+								<option value="NumberOperate" >NumberOperate(数字判断)</option>
+								<option value="EqualOperate">EqualOperate (是否相等判断)</option>
+								<option value="PageMove">PageMove(页面跳转)</option>
+								<option value="NumberOperate">NumberOperate(数值操作)</option>
+								<option value="UpdateSingleDateOperate">UpdateSingleDateOperate(更新单条数据)</option>
+								<option value="ExamComplexSqlOperate">ExamComplexSqlOperate(查询复杂SQL)</option>
+								
+							</select>
+						</td>
+					</tr>								
+					<tr><td>父点</td><td><input type="text" id="background_parentId"  readonly size=40  />(父节点)</td></tr>
+					<tr><td>属性</td><td><input type="text"  ondblclick=show_workflow_param_Input(this) id="background_param_json"  size=40 />（双击改值）</td></tr>								
+					<tr><td>移动</td><td><input type="button" value="上移" ><input type="button" value="下移" ></td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>	
+</div>
